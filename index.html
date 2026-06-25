@@ -6,6 +6,25 @@
 <title>Aernest Lean Rivera — Field Notes in Automation (The Press Edition)</title>
 <meta name="description" content="A printed-press portfolio of AI builds by Aernest Lean Rivera — twenty projects across three tools: Claude Cowork, Codex, and Claude Code." />
 <meta name="theme-color" content="#ECE6D6" />
+<!-- favicons / manifest -->
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+<!-- structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aernest Lean Rivera",
+  "jobTitle": "AI Product Builder & Licensed Electronics Engineer",
+  "url": "https://lw1414.github.io/Portfolio-Arca-Rivera-W4/",
+  "address": { "@type": "PostalAddress", "addressRegion": "Bulacan", "addressCountry": "Philippines" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Bulacan State University" },
+  "sameAs": ["https://github.com/lw1414"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -15,7 +34,7 @@
     --ink:#16140F; --ink-soft:#3a352b;
     --blue:#233CA6; --blue-deep:#1a2c7e;
     --red:#D63A24;
-    --muted:#6E6450;
+    --muted:#5a513f;
     --rule:rgba(22,20,15,.20);
     --rule-strong:rgba(22,20,15,.5);
     --maxw:1180px;
@@ -190,13 +209,35 @@
   #lightbox .lb-close{position:absolute;top:16px;right:20px;background:none;border:2px solid var(--paper);color:var(--paper);font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;cursor:pointer}
   #lightbox .lb-close:hover{background:var(--red);border-color:var(--red)}
 
+  /* picture passthrough so <picture> wrappers don't affect layout */
+  figure.plate picture,.plate-duo picture{display:contents}
+
+  /* focus-visible — black outline reads on cream, amber ring reads on dark */
+  a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+    outline:2px solid var(--ink);outline-offset:2px;
+    box-shadow:0 0 0 4px #F4C95D;border-radius:2px
+  }
+  .skip:focus-visible{outline-color:#F4C95D}
+
+  /* scroll-spy active nav item */
+  nav.links a[aria-current="true"]{color:var(--blue);border-color:var(--blue)}
+
+  /* back-to-cover control */
+  #toTop{position:fixed;right:clamp(14px,3vw,28px);bottom:clamp(14px,3vw,28px);z-index:95;
+    display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);
+    border:2px solid var(--paper);font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;padding:11px 14px;cursor:pointer;text-decoration:none;
+    opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,background .2s}
+  #toTop.show{opacity:1;visibility:visible;transform:none}
+  #toTop:hover{background:var(--blue)}
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .reveal{opacity:1;transform:none;transition:none}
-    figure.plate,.btn,.toc-item{transition:none}
+    figure.plate,.btn,.toc-item,#toTop{transition:none}
     *{scroll-behavior:auto}
   }
 </style>
@@ -207,7 +248,7 @@
 
 <header class="masthead">
   <div class="mast-row">
-    <a class="mast-name" href="#top"><b>Aernest&nbsp;Lean&nbsp;Rivera</b> <span class="reg">●</span></a>
+    <a class="mast-name" href="#top"><b>Aernest&nbsp;Lean&nbsp;Rivera</b> <span class="reg" aria-hidden="true">●</span></a>
     <button class="burger" aria-expanded="false" aria-controls="nav">Index ▾</button>
     <nav class="links" id="nav" aria-label="Sections">
       <a href="#contents">Contents</a>
@@ -215,7 +256,7 @@
       <a href="#dept-codex">Codex</a>
       <a href="#dept-claudecode">Claude&nbsp;Code</a>
       <a href="#about">About</a>
-      <a href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer">Résumé&nbsp;↗</a>
+      <a href="AResume-Editorial-Redacted.pdf" type="application/pdf" target="_blank" rel="noopener noreferrer" title="Opens in a new tab">Résumé&nbsp;↗</a>
       <a href="#colophon">Contact</a>
     </nav>
   </div>
@@ -229,20 +270,20 @@
       <div class="issue reveal">
         <span>Issue Nº 4 — The Press Edition</span>
         <span>Field Notes in Automation</span>
-        <span>Bulacan, PH · 2026</span>
+        <span>Philippines · 2026</span>
       </div>
       <h1 class="reveal">Twenty builds,<br>three tools,<br>one <em>builder</em>.</h1>
       <div class="cover-grid">
         <div class="reveal">
-          <p class="lead">Aernest Lean Rivera is an AI Product Builder and licensed electronics engineer who turns repetitive work into systems that run themselves. This edition collects a month of shipped work — agents, automations, security audits, and storefronts — set in type and grouped by the tool that built each one: Claude&nbsp;Cowork, Codex, and Claude&nbsp;Code.</p>
+          <p class="lead">Aernest Lean Rivera is an AI Product Builder and licensed electronics engineer who turns repetitive work into systems that run themselves. This edition collects a week of shipped work — agents, automations, security audits, and storefronts — set in type and grouped by the tool that built each one: Claude&nbsp;Cowork, Codex, and Claude&nbsp;Code.</p>
           <div class="cta-row">
             <a class="btn solid" href="#contents">Read the issue ↓</a>
-            <a class="btn ghost" href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+            <a class="btn ghost" href="AResume-Editorial-Redacted.pdf" type="application/pdf" target="_blank" rel="noopener noreferrer" title="Opens in a new tab">Résumé ↗</a>
             <a class="btn ghost" href="https://github.com/lw1414" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
         </div>
         <figure class="plate-duo reveal">
-          <img src="assets/cowork/figma-hero.png" alt="Techno Hero storefront, the cover plate of this edition" loading="lazy" />
+          <picture><source type="image/avif" srcset="assets/cowork/figma-hero.avif"><source type="image/webp" srcset="assets/cowork/figma-hero.webp"><img src="assets/cowork/figma-hero.png" alt="Techno Hero storefront, the cover plate of this edition" width="1344" height="768" decoding="async" loading="eager" fetchpriority="high"></picture>
           <figcaption>Plate I — Cover proof · design-to-code</figcaption>
         </figure>
       </div>
@@ -292,9 +333,9 @@
           </ul>
         </div>
         <div class="art-figs lead-plus">
-          <figure class="plate span"><img src="assets/cowork/figma-editorial.png" alt="Editorial section of the Techno Hero storefront" loading="lazy" /><figcaption><b>FIG.1.1</b> Storefront — editorial spread</figcaption></figure>
-          <figure class="plate"><img src="assets/cowork/figma-buds.png" alt="AuraBuds Pro product render" loading="lazy" /><figcaption><b>FIG.1.2</b> Product plate</figcaption></figure>
-          <figure class="plate"><img src="assets/cowork/figma-watch.png" alt="Helix Watch 2 product render" loading="lazy" /><figcaption><b>FIG.1.3</b> Product plate</figcaption></figure>
+          <figure class="plate span"><picture><source type="image/avif" srcset="assets/cowork/figma-editorial.avif"><source type="image/webp" srcset="assets/cowork/figma-editorial.webp"><img src="assets/cowork/figma-editorial.png" alt="Editorial section of the Techno Hero storefront" width="1344" height="768" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.1</b> Storefront — editorial spread</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/cowork/figma-buds.avif"><source type="image/webp" srcset="assets/cowork/figma-buds.webp"><img src="assets/cowork/figma-buds.png" alt="AuraBuds Pro product render" width="1024" height="1024" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.2</b> Product plate</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/cowork/figma-watch.avif"><source type="image/webp" srcset="assets/cowork/figma-watch.webp"><img src="assets/cowork/figma-watch.png" alt="Helix Watch 2 product render" width="1024" height="1024" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.3</b> Product plate</figcaption></figure>
         </div>
       </article>
 
@@ -311,8 +352,8 @@
           </ul>
         </div>
         <div class="art-figs two">
-          <figure class="plate"><img src="assets/cowork/sales-calendar.png" alt="Two-week sales calendar build" loading="lazy" /><figcaption><b>FIG.1.4</b> Calendar build</figcaption></figure>
-          <figure class="plate"><img src="assets/cowork/sales-gmail.png" alt="Gmail follow-up drafts proof" loading="lazy" /><figcaption><b>FIG.1.5</b> Draft follow-ups</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/cowork/sales-calendar.avif"><source type="image/webp" srcset="assets/cowork/sales-calendar.webp"><img src="assets/cowork/sales-calendar.png" alt="Two-week sales calendar build" width="1130" height="1424" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.4</b> Calendar build</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/cowork/sales-gmail.avif"><source type="image/webp" srcset="assets/cowork/sales-gmail.webp"><img src="assets/cowork/sales-gmail.png" alt="Gmail follow-up drafts proof" width="1537" height="658" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.5</b> Draft follow-ups</figcaption></figure>
         </div>
       </article>
 
@@ -329,7 +370,7 @@
         </div>
         <div class="art-figs two">
           <figure class="plate"><video src="assets/cowork/testertech-scan.mp4" autoplay muted loop playsinline preload="auto" aria-label="TesterTech TRON scan animation loop"></video><figcaption><b>FIG.1.6</b> TesterTech Wear — TRON scan</figcaption></figure>
-          <figure class="plate"><img src="assets/cowork/testertech-ad.png" alt="TesterTech promotional advertisement" loading="lazy" /><figcaption><b>FIG.1.7</b> Promo plate</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/cowork/testertech-ad.avif"><source type="image/webp" srcset="assets/cowork/testertech-ad.webp"><img src="assets/cowork/testertech-ad.png" alt="TesterTech promotional advertisement" width="1080" height="1350" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.7</b> Promo plate</figcaption></figure>
         </div>
       </article>
 
@@ -399,9 +440,9 @@
           </ul>
         </div>
         <div class="art-figs lead-plus">
-          <figure class="plate span"><img src="assets/codex/capstone-dashboard.png" alt="Capstone posting dashboard, all sections" loading="lazy" /><figcaption><b>FIG.2.1</b> Tracking dashboard</figcaption></figure>
-          <figure class="plate"><img src="assets/codex/capstone-linkedin-1.png" alt="LinkedIn PCB bringup campaign image" loading="lazy" /><figcaption><b>FIG.2.2</b> LinkedIn asset</figcaption></figure>
-          <figure class="plate"><img src="assets/codex/capstone-twitter.png" alt="Generated tweet, published" loading="lazy" /><figcaption><b>FIG.2.3</b> X / Twitter post</figcaption></figure>
+          <figure class="plate span"><picture><source type="image/avif" srcset="assets/codex/capstone-dashboard.avif"><source type="image/webp" srcset="assets/codex/capstone-dashboard.webp"><img src="assets/codex/capstone-dashboard.png" alt="Capstone posting dashboard, all sections" width="1600" height="3200" decoding="async" loading="lazy"></picture><figcaption><b>FIG.2.1</b> Tracking dashboard</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/codex/capstone-linkedin-1.avif"><source type="image/webp" srcset="assets/codex/capstone-linkedin-1.webp"><img src="assets/codex/capstone-linkedin-1.png" alt="LinkedIn PCB bringup campaign image" width="1200" height="1200" decoding="async" loading="lazy"></picture><figcaption><b>FIG.2.2</b> LinkedIn asset</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/codex/capstone-twitter.avif"><source type="image/webp" srcset="assets/codex/capstone-twitter.webp"><img src="assets/codex/capstone-twitter.png" alt="Generated tweet, published" width="584" height="768" decoding="async" loading="lazy"></picture><figcaption><b>FIG.2.3</b> X / Twitter post</figcaption></figure>
         </div>
       </article>
 
@@ -417,8 +458,8 @@
           </ul>
         </div>
         <div class="art-figs two">
-          <figure class="plate"><img src="assets/codex/imagegen.png" alt="Image generation, all screens" loading="lazy" /><figcaption><b>FIG.2.4</b> Variation set</figcaption></figure>
-          <figure class="plate"><img src="assets/codex/w4d5-imagegen.jpg" alt="Two image versions side by side" loading="lazy" /><figcaption><b>FIG.2.5</b> Version A/B</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/codex/imagegen.avif"><source type="image/webp" srcset="assets/codex/imagegen.webp"><img src="assets/codex/imagegen.png" alt="Image generation, all screens" width="3600" height="1050" decoding="async" loading="lazy"></picture><figcaption><b>FIG.2.4</b> Variation set</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/codex/w4d5-imagegen.avif"><source type="image/webp" srcset="assets/codex/w4d5-imagegen.webp"><img src="assets/codex/w4d5-imagegen.jpg" alt="Two image versions side by side" width="1024" height="785" decoding="async" loading="lazy"></picture><figcaption><b>FIG.2.5</b> Version A/B</figcaption></figure>
         </div>
       </article>
 
@@ -435,8 +476,8 @@
           </ul>
         </div>
         <div class="art-figs two">
-          <figure class="plate"><img src="assets/codex/w4d5-automation.jpg" alt="Fetch Reddit hourly automation configuration" loading="lazy" /><figcaption><b>FIG.2.6</b> Scheduled job</figcaption></figure>
-          <figure class="plate"><img src="assets/codex/w4d5-landing.jpg" alt="Landing page generated by the custom skill" loading="lazy" /><figcaption><b>FIG.2.7</b> Skill output</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/codex/w4d5-automation.avif"><source type="image/webp" srcset="assets/codex/w4d5-automation.webp"><img src="assets/codex/w4d5-automation.jpg" alt="Fetch Reddit hourly automation configuration" width="1534" height="980" decoding="async" loading="lazy"></picture><figcaption><b>FIG.2.6</b> Scheduled job</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/codex/w4d5-landing.avif"><source type="image/webp" srcset="assets/codex/w4d5-landing.webp"><img src="assets/codex/w4d5-landing.jpg" alt="Landing page generated by the custom skill" width="1537" height="939" decoding="async" loading="lazy"></picture><figcaption><b>FIG.2.7</b> Skill output</figcaption></figure>
         </div>
       </article>
     </div>
@@ -488,9 +529,9 @@
           </ul>
         </div>
         <div class="art-figs lead-plus">
-          <figure class="plate span"><img src="assets/claudecode/w4d2-advanced.png" alt="Advanced MCP, hooks and subagents deliverable" loading="lazy" /><figcaption><b>FIG.3.1</b> Advanced build</figcaption></figure>
-          <figure class="plate"><img src="assets/claudecode/w4d2-publish.png" alt="Package and publish step" loading="lazy" /><figcaption><b>FIG.3.2</b> Publish</figcaption></figure>
-          <figure class="plate"><img src="assets/claudecode/w4d2-plugins.png" alt="Installed plugins window" loading="lazy" /><figcaption><b>FIG.3.3</b> Installed</figcaption></figure>
+          <figure class="plate span"><picture><source type="image/avif" srcset="assets/claudecode/w4d2-advanced.avif"><source type="image/webp" srcset="assets/claudecode/w4d2-advanced.webp"><img src="assets/claudecode/w4d2-advanced.png" alt="Advanced MCP, hooks and subagents deliverable" width="1120" height="880" decoding="async" loading="lazy"></picture><figcaption><b>FIG.3.1</b> Advanced build</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/claudecode/w4d2-publish.avif"><source type="image/webp" srcset="assets/claudecode/w4d2-publish.webp"><img src="assets/claudecode/w4d2-publish.png" alt="Package and publish step" width="1140" height="900" decoding="async" loading="lazy"></picture><figcaption><b>FIG.3.2</b> Publish</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/claudecode/w4d2-plugins.avif"><source type="image/webp" srcset="assets/claudecode/w4d2-plugins.webp"><img src="assets/claudecode/w4d2-plugins.png" alt="Installed plugins window" width="1080" height="760" decoding="async" loading="lazy"></picture><figcaption><b>FIG.3.3</b> Installed</figcaption></figure>
         </div>
       </article>
 
@@ -507,9 +548,9 @@
           </ul>
         </div>
         <div class="art-figs lead-plus">
-          <figure class="plate"><img src="assets/claudecode/seo-before.png" alt="Homepage before SEO fixes" loading="lazy" /><figcaption><b>FIG.3.4</b> Before</figcaption></figure>
-          <figure class="plate"><img src="assets/claudecode/seo-after.png" alt="Homepage after SEO fixes" loading="lazy" /><figcaption><b>FIG.3.5</b> After</figcaption></figure>
-          <figure class="plate span"><img src="assets/claudecode/seo-featured.png" alt="Chosen AI-generated featured image" loading="lazy" /><figcaption><b>FIG.3.6</b> Chosen featured image</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/claudecode/seo-before.avif"><source type="image/webp" srcset="assets/claudecode/seo-before.webp"><img src="assets/claudecode/seo-before.png" alt="Homepage before SEO fixes" width="1366" height="1089" decoding="async" loading="lazy"></picture><figcaption><b>FIG.3.4</b> Before</figcaption></figure>
+          <figure class="plate"><picture><source type="image/avif" srcset="assets/claudecode/seo-after.avif"><source type="image/webp" srcset="assets/claudecode/seo-after.webp"><img src="assets/claudecode/seo-after.png" alt="Homepage after SEO fixes" width="1366" height="1818" decoding="async" loading="lazy"></picture><figcaption><b>FIG.3.5</b> After</figcaption></figure>
+          <figure class="plate span"><picture><source type="image/avif" srcset="assets/claudecode/seo-featured.avif"><source type="image/webp" srcset="assets/claudecode/seo-featured.webp"><img src="assets/claudecode/seo-featured.png" alt="Chosen AI-generated featured image" width="1344" height="768" decoding="async" loading="lazy"></picture><figcaption><b>FIG.3.6</b> Chosen featured image</figcaption></figure>
         </div>
       </article>
     </div>
@@ -524,7 +565,7 @@
           <h2>About the builder</h2>
           <p>Aernest Lean Rivera is an AI Product Builder and licensed Electronics Engineer based in Bulacan, Philippines. He spent four years shipping LoRaWAN and IoT hardware — 150+ devices, ~30% BOM cost reductions — before turning that systems instinct toward AI: multi-agent pipelines, automation, and developer tooling, built during his training at Arca&nbsp;PH.</p>
           <p style="margin-top:14px">This edition is the print companion to his dark, glass-built portfolio — same work, a different press.</p>
-          <p style="margin-top:14px"><a href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:500">Read the full résumé (PDF) ↗</a></p>
+          <p style="margin-top:14px"><a href="AResume-Editorial-Redacted.pdf" type="application/pdf" target="_blank" rel="noopener noreferrer" title="Opens in a new tab" style="color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:500">Read the full résumé (PDF) ↗</a></p>
           <div class="col-h">Toolkit</div>
           <div class="skill-row">
             <span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">Claude Cowork</span><span class="chip">MCP</span><span class="chip">Python</span><span class="chip">Node</span><span class="chip">HTML/CSS</span><span class="chip">Tailwind</span><span class="chip">Supabase</span><span class="chip">Git</span><span class="chip">Vercel</span><span class="chip">KiCad</span><span class="chip">Altium</span>
@@ -554,7 +595,7 @@
       <div class="top">
         <h2>Let’s build the next issue.</h2>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <a class="gh" href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+          <a class="gh" href="AResume-Editorial-Redacted.pdf" type="application/pdf" target="_blank" rel="noopener noreferrer" title="Opens in a new tab">Résumé ↗</a>
           <a class="gh" href="https://github.com/lw1414" target="_blank" rel="noopener noreferrer">GitHub ↗ /lw1414</a>
         </div>
       </div>
@@ -567,6 +608,8 @@
   </footer>
 </main>
 
+<a id="toTop" href="#top" aria-label="Back to cover">↑ Cover</a>
+
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed figure">
   <button class="lb-close" type="button" aria-label="Close">Close ✕</button>
   <div class="lb-slot"></div>
@@ -575,17 +618,26 @@
 
 <script>
 (function(){
-  // mobile nav
+  // mobile nav — toggle, ESC to close, focus trap, restore focus
   var burger=document.querySelector('.burger'), nav=document.getElementById('nav');
+  function navOpen(){return nav.classList.contains('open');}
+  function setNav(open){
+    nav.classList.toggle('open',open);
+    if(burger){burger.setAttribute('aria-expanded',open);burger.textContent=open?'Close ▴':'Index ▾';}
+    if(open){var f=nav.querySelector('a');if(f)f.focus();}
+    else if(burger){burger.focus();}
+  }
   if(burger){
-    burger.addEventListener('click',function(){
-      var open=nav.classList.toggle('open');
-      burger.setAttribute('aria-expanded',open);
-      burger.textContent=open?'Close ▴':'Index ▾';
-    });
-    nav.addEventListener('click',function(e){
-      if(e.target.tagName==='A'&&nav.classList.contains('open')){
-        nav.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.textContent='Index ▾';
+    burger.addEventListener('click',function(){setNav(!navOpen());});
+    nav.addEventListener('click',function(e){ if(e.target.tagName==='A'&&navOpen())setNav(false); });
+    document.addEventListener('keydown',function(e){
+      if(!navOpen())return;
+      if(e.key==='Escape'){setNav(false);return;}
+      if(e.key==='Tab'){
+        var items=[burger].concat([].slice.call(nav.querySelectorAll('a')));
+        var first=items[0],last=items[items.length-1];
+        if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+        else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
       }
     });
   }
@@ -628,6 +680,33 @@
     els.forEach(function(el){io.observe(el);});
     setTimeout(function(){els.forEach(function(el){el.classList.add('in');});},2600);
   } else { els.forEach(function(el){el.classList.add('in');}); }
+
+  // scroll-spy: mark the nav link for the section in view
+  var spyMap=[];
+  document.querySelectorAll('nav.links a[href^="#"]').forEach(function(a){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t)spyMap.push({a:a,t:t});
+  });
+  if('IntersectionObserver'in window && spyMap.length){
+    var spy=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var m=spyMap.find(function(x){return x.t===en.target;});
+        if(!m)return;
+        if(en.isIntersecting){
+          spyMap.forEach(function(x){x.a.removeAttribute('aria-current');});
+          m.a.setAttribute('aria-current','true');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px',threshold:0});
+    spyMap.forEach(function(m){spy.observe(m.t);});
+  }
+
+  // back-to-cover control
+  var toTop=document.getElementById('toTop');
+  if(toTop){
+    var onScroll=function(){ toTop.classList.toggle('show', window.scrollY>600); };
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  }
 })();
 </script>
 </body>
