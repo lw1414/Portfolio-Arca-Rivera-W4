@@ -244,6 +244,12 @@
   .doc-table table{border-collapse:collapse;width:100%;font-family:"Space Mono",monospace;font-size:12.5px}
   .doc-table th,.doc-table td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
   .doc-table th{background:var(--ink);color:var(--paper);text-transform:uppercase;letter-spacing:.05em;font-size:11px;position:sticky;top:0}
+  .doc-body iframe.pdf-frame{width:100%;height:min(78vh,640px);border:1.5px solid var(--ink);background:#fff;margin:6px 0 8px}
+  .doc-body .openfull{display:inline-flex;gap:8px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.04em;text-decoration:none;border:1.5px solid var(--ink);padding:7px 12px;color:var(--ink);transition:background .2s,color .2s}
+  .doc-body .openfull:hover{background:var(--ink);color:var(--paper)}
+  .doc-meta{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .doc-code{background:var(--ink);color:#e9e3d3;font-family:"Space Mono",ui-monospace,monospace;font-size:12px;line-height:1.55;padding:16px 18px;overflow:auto;max-height:62vh;border:1.5px solid var(--ink);white-space:pre;margin:6px 0 10px;tab-size:2}
+  .doc-code::selection,.doc-code ::selection{background:var(--blue);color:#fff}
 
   /* focus-visible — black outline reads on cream, amber ring reads on dark */
   a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
@@ -393,14 +399,7 @@
             <li>Cold-email + LinkedIn outreach systems</li>
             <li>Canva collateral and battle cards</li>
           </ul>
-          <ul class="deliverables">
-            <li><a href="assets/deliverables/sales-syncflow-pitch.pdf" type="application/pdf" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">PDF</span> SyncFlow pitch deck</a></li>
-            <li><a href="assets/deliverables/sales-syncflow-onepager.pdf" type="application/pdf" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">PDF</span> One-pager</a></li>
-            <li><a href="assets/deliverables/sales-pricing-roi.xlsx" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">XLSX</span> Pricing &amp; ROI</a></li>
-            <li><a href="assets/deliverables/sales-pipeline-analytics.xlsx" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">XLSX</span> Pipeline analytics</a></li>
-            <li><a href="assets/deliverables/sales-week1-briefing.docx" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">DOCX</span> Week-1 briefing</a></li>
-            <li><a href="assets/deliverables/sales-completion-report.docx" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">DOCX</span> Completion report</a></li>
-          </ul>
+          <div class="docs"><details><summary>SyncFlow pitch deck</summary><div class="doc-body"><p class="doc-meta">PDF · viewed in-page</p><iframe class="pdf-frame" src="assets/deliverables/sales-syncflow-pitch.pdf#view=FitH" loading="lazy" title="SyncFlow pitch deck"></iframe><br><a class="openfull" href="assets/deliverables/sales-syncflow-pitch.pdf" target="_blank" rel="noopener noreferrer">Open full ↗</a></div></details><details><summary>SyncFlow one-pager</summary><div class="doc-body"><p class="doc-meta">PDF · viewed in-page</p><iframe class="pdf-frame" src="assets/deliverables/sales-syncflow-onepager.pdf#view=FitH" loading="lazy" title="SyncFlow one-pager"></iframe><br><a class="openfull" href="assets/deliverables/sales-syncflow-onepager.pdf" target="_blank" rel="noopener noreferrer">Open full ↗</a></div></details><details><summary>Pricing &amp; ROI model</summary><div class="doc-body"><h5>Pricing</h5><div class="doc-table"><table><tr><th>SyncFlow — Pricing</th></tr><tr><td>Annual list pricing (per customer). Enterprise is custom-quoted.</td></tr><tr><td>Tier</td><td>Annual Price</td><td>Best for</td><td>Connectors</td><td>Real-Time Sync</td><td>Compliance Engine</td><td>Support</td></tr><tr><td>Starter</td><td>5000</td><td>Small teams, 1–2 systems</td><td>Up to 3</td><td>Standard</td><td>Audit log</td><td>Email</td></tr><tr><td>Pro</td><td>8000</td><td>Mid-market, multi-system</td><td>Up to 10</td><td>Advanced</td><td>Full (SOC 2)</td><td>Priority + SE</td></tr><tr><td>Enterprise</td><td>Custom</td><td>Complex / regulated</td><td>Unlimited</td><td>Advanced + SLAs</td><td>Full + HIPAA/data residency</td><td>Dedicated CSM</td></tr><tr><td>Pro tier is the recommended fit for most mid-market accounts (e.g., Greenline).</td></tr></table></div><h5>Greenline Proposal</h5><div class="doc-table"><table><tr><th>Greenline Logistics — SyncFlow Proposal</th></tr><tr><td>Prepared by Jordan, Account Executive · (TEST) simulation</td></tr><tr><td>Summary</td></tr><tr><td>Greenline (VP Ops, Derek Santos) tracks inventory manually across warehouses, causing lag, errors, and wasted hours. SyncFlow connects their WMS/ERP/spreadsheets via the Integration Hub and keeps inventory consistent everywhere with Real-Time Sync — eliminating manual reconciliation.</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Pricing Tier Selection</td></tr><tr><td>Tier</td><td>Annual Price</td><td>Selected</td></tr><tr><td>Starter</td><td>5000</td><td></td></tr><tr><td>Pro</td><td>8000</td><td>✓ Recommended</td></tr><tr><td>Enterprise</td><td>Custom</td><td></td></tr><tr><td>Selected annual price</td><td>8000</td></tr><tr><td>Expected annual ROI (from ROI Calculator)</td><td>78000</td></tr><tr><td>Payback period (months)</td><td>1.23076923076923</td></tr><tr><td>Implementation Plan (3 steps)</td></tr><tr><td>Step</td><td>Timeline</td><td>Activities</td></tr><tr><td>1 · Connect</td><td>Week 1–2</td><td>Stand up the Integration Hub; connect WMS, ERP, and existing spreadsheets. Validate data mapping.</td></tr><tr><td>2 · Sync</td><td>Week 3–4</td><td>Enable Real-Time Sync across systems; configure inventory rules and alerts. Parallel-run vs. manual.</td></tr><tr><td>3 · Go Live</td><td>Week 5–6</td><td>Cut over to SyncFlow as source of truth; train ops team; hand off to Customer Success with success metrics.</td></tr></table></div><h5>ROI Calculator</h5><div class="doc-table"><table><tr><th>SyncFlow — ROI Calculator (Greenline)</th></tr><tr><td>Blue cells = inputs you can change. Black cells = calculated.</td></tr><tr><td>INPUTS</td></tr><tr><td>Hours saved per week</td><td>15</td></tr><tr><td>Fully-loaded hourly cost</td><td>100</td></tr><tr><td>Systems integrated</td><td>4</td></tr><tr><td>Weeks per year</td><td>52</td></tr><tr><td>Selected tier annual price</td><td>8000</td></tr><tr><td>OUTPUTS</td></tr><tr><td>Weekly savings</td><td>1500</td></tr><tr><td>Annual savings</td><td>78000</td></tr><tr><td>Annual value per system</td><td>19500</td></tr><tr><td>Payback period (months)</td><td>1.23076923076923</td></tr><tr><td>First-year net value (savings − price)</td><td>70000</td></tr><tr><td>3-year net value</td><td>210000</td></tr></table></div></div></details><details><summary>Pipeline analytics</summary><div class="doc-body"><h5>Time Audit</h5><div class="doc-table"><table><tr><th>Date</th><th>Day</th><th>Start</th><th>End</th><th>Duration (h)</th><th>Event</th><th>Scope</th><th>Category</th><th>Week</th></tr><tr><td>46512</td><td>Wednesday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.395833333333333</td><td>0.416666666666667</td><td>0.5</td><td>CRM Hygiene &amp; Pipeline Update</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.416666666666667</td><td>0.447916666666667</td><td>0.75</td><td>Greenline Logistics — Proposal Review</td><td>External</td><td>Deal Call</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.458333333333333</td><td>0.479166666666667</td><td>0.5</td><td>SDR Sync w/ Carlos Mendez — Lead Handoff</td><td>Internal</td><td>SDR Sync</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.541666666666667</td><td>0.572916666666667</td><td>0.75</td><td>NovaTech Solutions — Re-engagement Call</td><td>External</td><td>Deal Call</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.583333333333333</td><td>0.625</td><td>1</td><td>Prospecting Block — Outbound</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.625</td><td>0.645833333333333</td><td>0.5</td><td>Weekly 1:1 w/ Lisa Tran</td><td>Internal</td><td>1:1</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.666666666666667</td><td>0.6875</td><td>0.5</td><td>Proposal Prep — Greenline Pricing</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46512</td><td>Wednesday</td><td>0.708333333333333</td><td>0.729166666666667</td><td>0.5</td><td>Email Follow-ups &amp; Notes</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.395833333333333</td><td>0.427083333333333</td><td>0.75</td><td>Apex Financial — Technical Deep Dive w/ Kevin Lee</td><td>External</td><td>Deal Call</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.4375</td><td>0.46875</td><td>0.75</td><td>Coastal Health Systems — Inbound Discovery</td><td>External</td><td>Deal Call</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.479166666666667</td><td>0.5</td><td>0.5</td><td>CRM Updates — Log Discovery Notes</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.541666666666667</td><td>0.5625</td><td>0.5</td><td>Deal Strategy — Apex w/ Kevin Lee</td><td>Internal</td><td>Deal Strategy</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.583333333333333</td><td>0.614583333333333</td><td>0.75</td><td>Prospecting Block — Account Research</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.625</td><td>0.65625</td><td>0.75</td><td>Coastal — Demo Prep &amp; Stakeholder Mapping</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.666666666666667</td><td>0.6875</td><td>0.5</td><td>Pipeline Review w/ Marcus Chen</td><td>Internal</td><td>Pipeline Review</td><td>Week 1</td></tr><tr><td>46513</td><td>Thursday</td><td>0.697916666666667</td><td>0.71875</td><td>0.5</td><td>Email Follow-ups</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.395833333333333</td><td>0.427083333333333</td><td>0.75</td><td>BrightPath Education — CFO Intro Call</td><td>External</td><td>Deal Call</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.4375</td><td>0.46875</td><td>0.75</td><td>Meridian Retail — First Discovery Call</td><td>External</td><td>Deal Call</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.479166666666667</td><td>0.5</td><td>0.5</td><td>CRM Updates &amp; Activity Logging</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.541666666666667</td><td>0.572916666666667</td><td>0.75</td><td>Coastal Health — Demo Prep w/ Kevin Lee</td><td>Internal</td><td>Admin</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.583333333333333</td><td>0.604166666666667</td><td>0.5</td><td>SDR Weekly Handoff Sync — Carlos</td><td>Internal</td><td>SDR Sync</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.614583333333333</td><td>0.645833333333333</td><td>0.75</td><td>Forecast Submission — Week 1</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.645833333333333</td><td>0.677083333333333</td><td>0.75</td><td>Prospecting &amp; Outbound Block</td><td>Solo</td><td>Admin</td><td>Week 1</td></tr><tr><td>46514</td><td>Friday</td><td>0.6875</td><td>0.71875</td><td>0.75</td><td>Lunch &amp; Learn: Negotiation Skills Training</td><td>Internal</td><td>Training</td><td>Week 1</td></tr><tr><td>46517</td><td>Monday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.395833333333333</td><td>0.416666666666667</td><td>0.5</td><td>Weekly Planning &amp; CRM Review</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.416666666666667</td><td>0.447916666666667</td><td>0.75</td><td>Greenline Logistics — Negotiation Call</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.458333333333333</td><td>0.489583333333333</td><td>0.75</td><td>NovaTech Solutions — Follow-up Attempt</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.541666666666667</td><td>0.5625</td><td>0.5</td><td>SDR Sync w/ Carlos — New Leads</td><td>Internal</td><td>SDR Sync</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.572916666666667</td><td>0.604166666666667</td><td>0.75</td><td>Prospecting Block — Outbound</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.604166666666667</td><td>0.635416666666667</td><td>0.75</td><td>Apex — Proposal Build</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.645833333333333</td><td>0.666666666666667</td><td>0.5</td><td>Weekly 1:1 w/ Lisa Tran</td><td>Internal</td><td>1:1</td><td>Week 2</td></tr><tr><td>46517</td><td>Monday</td><td>0.677083333333333</td><td>0.697916666666667</td><td>0.5</td><td>Email Follow-ups &amp; Notes</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.395833333333333</td><td>0.427083333333333</td><td>0.75</td><td>Apex Financial — Proposal Presentation</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.4375</td><td>0.479166666666667</td><td>1</td><td>Coastal Health Systems — Product Demo w/ Kevin Lee</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.489583333333333</td><td>0.510416666666667</td><td>0.5</td><td>CRM Updates — Log Demo Outcomes</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.541666666666667</td><td>0.572916666666667</td><td>0.75</td><td>Prospecting &amp; Account Research</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.583333333333333</td><td>0.604166666666667</td><td>0.5</td><td>Deal Strategy — Coastal Stakeholders</td><td>Internal</td><td>Deal Strategy</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.614583333333333</td><td>0.645833333333333</td><td>0.75</td><td>Pipeline Review w/ Marcus Chen</td><td>Internal</td><td>Pipeline Review</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.65625</td><td>0.677083333333333</td><td>0.5</td><td>Proposal Follow-up — Apex</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46518</td><td>Tuesday</td><td>0.6875</td><td>0.708333333333333</td><td>0.5</td><td>Email Follow-ups</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.395833333333333</td><td>0.427083333333333</td><td>0.75</td><td>BrightPath Education — CFO Meeting</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.4375</td><td>0.46875</td><td>0.75</td><td>Meridian Retail — Product Demo</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.479166666666667</td><td>0.5</td><td>0.5</td><td>CRM Hygiene &amp; Notes</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.541666666666667</td><td>0.5625</td><td>0.5</td><td>SDR Sync w/ Carlos</td><td>Internal</td><td>SDR Sync</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.572916666666667</td><td>0.604166666666667</td><td>0.75</td><td>Prospecting Block</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.604166666666667</td><td>0.625</td><td>0.5</td><td>Deal Strategy — BrightPath POC Scoping w/ Kevin</td><td>Internal</td><td>Deal Strategy</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.635416666666667</td><td>0.65625</td><td>0.5</td><td>Forecast Update &amp; CRM</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46519</td><td>Wednesday</td><td>0.666666666666667</td><td>0.6875</td><td>0.5</td><td>Email Follow-ups</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.395833333333333</td><td>0.427083333333333</td><td>0.75</td><td>Greenline Logistics — Verbal Commit / Closing Call</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.4375</td><td>0.46875</td><td>0.75</td><td>Coastal Health Systems — Stakeholder Alignment</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.479166666666667</td><td>0.5</td><td>0.5</td><td>NovaTech Solutions — Check-in (Cold)</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.541666666666667</td><td>0.5625</td><td>0.5</td><td>CRM Updates — Mark NovaTech Closed Lost</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.572916666666667</td><td>0.59375</td><td>0.5</td><td>Greenline — CS Handoff Prep w/ Priya Mehta</td><td>Internal</td><td>CS Handoff</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.604166666666667</td><td>0.635416666666667</td><td>0.75</td><td>Prospecting Block</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.645833333333333</td><td>0.666666666666667</td><td>0.5</td><td>Pipeline Review w/ Marcus Chen</td><td>Internal</td><td>Pipeline Review</td><td>Week 2</td></tr><tr><td>46520</td><td>Thursday</td><td>0.677083333333333</td><td>0.697916666666667</td><td>0.5</td><td>Email Follow-ups &amp; Notes</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.375</td><td>0.385416666666667</td><td>0.25</td><td>Team Standup</td><td>Internal</td><td>Standup</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.395833333333333</td><td>0.427083333333333</td><td>0.75</td><td>Apex Financial — Negotiation Call</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.4375</td><td>0.46875</td><td>0.75</td><td>BrightPath Education — POC Kickoff w/ Kevin Lee</td><td>External</td><td>Deal Call</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.479166666666667</td><td>0.5</td><td>0.5</td><td>Greenline — CS Handoff w/ Priya Mehta</td><td>Internal</td><td>CS Handoff</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.541666666666667</td><td>0.5625</td><td>0.5</td><td>SDR Weekly Handoff Sync — Carlos</td><td>Internal</td><td>SDR Sync</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.572916666666667</td><td>0.604166666666667</td><td>0.75</td><td>CRM Updates &amp; Deal Cleanup</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.614583333333333</td><td>0.635416666666667</td><td>0.5</td><td>Forecast Submission — Week 2 / Q2</td><td>Solo</td><td>Admin</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.645833333333333</td><td>0.666666666666667</td><td>0.5</td><td>Pipeline Review &amp; Forecast w/ Marcus Chen</td><td>Internal</td><td>Pipeline Review</td><td>Week 2</td></tr><tr><td>46521</td><td>Friday</td><td>0.677083333333333</td><td>0.708333333333333</td><td>0.75</td><td>Team Happy Hour (Social)</td><td>Internal</td><td>Social</td><td>Week 2</td></tr><tr><td></td><td></td><td></td><td>TOTAL</td><td>42.25</td></tr></table></div><h5>Summary Dashboard</h5><div class="doc-table"><table><tr><th>Sales Activity Analytics — Time Allocation Dashboard</th></tr><tr><td>Jordan Reyes · AE · May 5–16, 2027 (2-week sprint) · (TEST) simulation</td></tr><tr><td>HOURS BY CATEGORY</td></tr><tr><td>Category</td><td>Hours</td><td>% of Total</td></tr><tr><td>Deal Call</td><td>12.75</td><td>0.301775147928994</td></tr><tr><td>Pipeline Review</td><td>2.25</td><td>0.0532544378698225</td></tr><tr><td>Standup</td><td>2</td><td>0.0473372781065089</td></tr><tr><td>1:1</td><td>1</td><td>0.0236686390532544</td></tr><tr><td>SDR Sync</td><td>2.5</td><td>0.0591715976331361</td></tr><tr><td>Deal Strategy</td><td>1.5</td><td>0.0355029585798817</td></tr><tr><td>CS Handoff</td><td>1</td><td>0.0236686390532544</td></tr><tr><td>Admin</td><td>17.75</td><td>0.420118343195266</td></tr><tr><td>Training</td><td>0.75</td><td>0.0177514792899408</td></tr><tr><td>Social</td><td>0.75</td><td>0.0177514792899408</td></tr><tr><td>Total</td><td>42.25</td><td>1</td></tr><tr><td>HOURS BY SCOPE</td></tr><tr><td>Scope</td><td>Hours</td><td>% of Total</td></tr><tr><td>External</td><td>12.75</td><td>0.301775147928994</td></tr><tr><td>Internal</td><td>12.5</td><td>0.295857988165681</td></tr><tr><td>Solo</td><td>17</td><td>0.402366863905325</td></tr><tr><td>HOURS BY WEEK</td></tr><tr><td>Week</td><td>Hours</td><td>% of Total</td></tr><tr><td>Week 1</td><td>16.25</td><td>0.384615384615385</td></tr><tr><td>Week 2</td><td>26</td><td>0.615384615384615</td></tr><tr><td>KEY METRIC — SELLING TIME</td></tr><tr><td>% of time spent SELLING (external deal calls)</td><td>0.301775147928994</td></tr><tr><td>% of time INTERNAL + ADMIN (everything else)</td><td>0.698224852071006</td></tr><tr><td>Benchmark: most AEs spend only 30–35% selling</td></tr></table></div><h5>Deal Tracker</h5><div class="doc-table"><table><tr><th>Deal Tracker &amp; Q2 Quota Attainment</th></tr><tr><td>Jordan Reyes · AE · (TEST) simulation · 2-week sprint May 5–16, 2027</td></tr><tr><td>Deal</td><td>Value</td><td>Start Stage</td><td>End Stage</td><td>Key Milestone Dates</td><td># Mtgs</td><td>Hours</td><td>Status</td></tr><tr><td>Greenline Logistics</td><td>76000</td><td>Proposal</td><td>Verbal Commit (Won)</td><td>5/5 Proposal · 5/10 Negotiation · 5/13 Verbal Commit</td><td>6</td><td>3.75</td><td>Closed Won</td></tr><tr><td>Apex Financial</td><td>110000</td><td>Technical Deep Dive</td><td>Negotiation</td><td>5/6 Deep Dive · 5/11 Proposal · 5/14 Negotiation</td><td>6</td><td>4</td><td>Advancing</td></tr><tr><td>BrightPath Education</td><td>120000</td><td>CFO Intro</td><td>POC Kickoff</td><td>5/7 CFO Intro · 5/12 CFO Meeting · 5/14 POC Kickoff</td><td>4</td><td>2.75</td><td>Advancing</td></tr><tr><td>NovaTech Solutions</td><td>95000</td><td>Re-engagement</td><td>Cold</td><td>5/5 Re-engage · 5/10 Follow-up · 5/13 Cold</td><td>4</td><td>2.5</td><td>At Risk / Lost</td></tr><tr><td>Coastal Health Systems</td><td>90000</td><td>Inbound Discovery</td><td>Stakeholder</td><td>5/6 Discovery · 5/11 Demo · 5/13 Stakeholder</td><td>6</td><td>4.5</td><td>In Progress</td></tr><tr><td>Meridian Retail</td><td>75000</td><td>Discovery</td><td>Demo</td><td>5/7 Discovery · 5/12 Demo</td><td>2</td><td>1.5</td><td>In Progress</td></tr><tr><td>Total Pipeline (all 6)</td><td>566000</td><td></td><td></td><td></td><td>28</td><td>19</td></tr><tr><td>Q2 QUOTA TRACKER</td></tr><tr><td>Q2 Quota</td><td>450000</td></tr><tr><td>Closed-Won Revenue (Greenline verbal commit)</td><td>76000</td></tr><tr><td>Quota Attainment %</td><td>0.168888888888889</td></tr><tr><td>Active Pipeline Value (open: Apex+BrightPath+Coastal+Meridian)</td><td>395000</td></tr><tr><td>Closed-Lost (NovaTech)</td><td>95000</td></tr><tr><td>Still Needed in June to hit Quota</td><td>374000</td></tr></table></div></div></details><details><summary>Week-1 sales briefing</summary><div class="doc-body"><h4>Weekly Sales Briefing — Week 1</h4><p>May 5–9, 2027  (working days: Wed 5, Thu 6, Fri 7)</p><p>Jordan Reyes · Account Executive · Q2 Quota $450,000 · Manager: Lisa Tran · VP Sales: Marcus Chen</p><div class="doc-table"><table><tr><th>⚠️ TEST / SIMULATION — All events, deals, and contacts are fictional and tagged (TEST). Not real data.</th></tr></table></div><h5>Weekly Overview &amp; Priorities</h5><ul><li>Advance Greenline ($76K) from Proposal toward Negotiation — pricing scenarios prepped, approval secured up to 12%.</li><li>Clear Apex ($110K) technical validation with Kevin Lee and lock the EU data-residency answer to unblock the proposal.</li><li>Open executive engagement on BrightPath ($120K) — the largest deal — by earning a formal CFO working session.</li><li>Generate top-of-funnel: Coastal ($90K) and Meridian ($75K) both move from discovery toward demos next week.</li><li>Make a call on NovaTech ($95K): offer a low-commitment pilot or disqualify; it is the week’s biggest risk.</li></ul><p>Pipeline snapshot (6 active deals · total $566K):</p><div class="doc-table"><table><tr><th>Deal</th><th>Value</th><th>Stage (start of wk)</th><th>End-of-Week Position</th><th>Forecast</th></tr><tr><td>Greenline Logistics</td><td>$76K</td><td>Proposal</td><td>Negotiation prep</td><td>Commit</td></tr><tr><td>Apex Financial</td><td>$110K</td><td>Technical Deep Dive</td><td>Proposal build</td><td>Best case</td></tr><tr><td>BrightPath Education</td><td>$120K</td><td>CFO Intro</td><td>CFO meeting next</td><td>Best case</td></tr><tr><td>NovaTech Solutions</td><td>$95K</td><td>Re-engagement</td><td>Stalling</td><td>At risk</td></tr><tr><td>Coastal Health Systems</td><td>$90K</td><td>Inbound Discovery</td><td>Demo next</td><td>Pipeline</td></tr><tr><td>Meridian Retail</td><td>$75K</td><td>Discovery</td><td>Demo next</td><td>Pipeline</td></tr></table></div><p>Most important meetings this week: (1) Greenline Proposal Review — closest deal to commit; (2) Apex Technical Deep Dive — gates a $110K proposal; (3) BrightPath CFO Intro — exec access on the largest opportunity.</p><h5>Wednesday, May 5</h5><div class="doc-table"><table><tr><th>Team Standup09:00–09:15  ·  Standup  ·  Internal</th></tr><tr><td>Context</td><td>Daily 15-min sales team sync. Share top priority for the day and blockers.</td></tr><tr><td>Prep</td><td>Skim pipeline; note Greenline proposal review and NovaTech re-engagement happening today.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Lisa Tran (Sales Mgr), Carlos Mendez (SDR), Kevin Lee (SE)</td></tr></table></div><div class="doc-table"><table><tr><th>CRM Hygiene &amp; Pipeline Update09:30–10:00  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Update deal stages and next steps in CRM ahead of the week. Verify all 6 active deals have accurate close dates and amounts.</td></tr><tr><td>Prep</td><td>Confirm Greenline=$76K Proposal, Apex=$110K Tech Deep Dive, BrightPath=$120K CFO Intro, NovaTech=$95K Re-engagement, Coastal=$90K Discovery, Meridian=$75K Discovery.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Greenline Logistics — Proposal Review10:00–10:45  ·  Deal Call  ·  External</th></tr><tr><td>Context</td><td>Walk Greenline through the submitted proposal — 3-year term, 120 seats, implementation scope.</td></tr><tr><td>Prep</td><td>Re-confirm ROI model (18% logistics cost reduction). Have discount guardrail ready (max 12%).</td></tr><tr><td>Decisions</td><td>Agree on next step toward negotiation; confirm Finance is looped in.</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Dana Wu (Greenline VP Ops), Mark Reilly (Greenline Finance)</td></tr></table></div><div class="doc-table"><table><tr><th>SDR Sync w/ Carlos Mendez — Lead Handoff11:00–11:30  ·  SDR Sync  ·  Internal</th></tr><tr><td>Context</td><td>Review newly booked meetings and qualify inbound leads. Coastal Health (inbound) handed off this week.</td></tr><tr><td>Prep</td><td>Confirm Coastal discovery is on Thu; review BANT notes Carlos captured.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Carlos Mendez (SDR)</td></tr></table></div><div class="doc-table"><table><tr><th>NovaTech Solutions — Re-engagement Call13:00–13:45  ·  Deal Call  ·  External</th></tr><tr><td>Context</td><td>Deal stalled 60 days ago over budget freeze. Attempt to re-engage and find a new champion.</td></tr><tr><td>Prep</td><td>Reference Q1 conversation; bring a lighter-footprint pilot option to lower commitment.</td></tr><tr><td>Decisions</td><td>Gauge whether budget has reopened; set a follow-up or disqualify.</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Sam Okoro (NovaTech IT Director)</td></tr></table></div><div class="doc-table"><table><tr><th>Prospecting Block — Outbound14:00–15:00  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Dedicated outbound block — personalized emails and calls to net-new mid-market logistics &amp; fintech accounts to backfill Q2 pipeline.</td></tr><tr><td>Prep</td><td>Pull target list; aim for 15 touches and 2 new meetings booked.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Weekly 1:1 w/ Lisa Tran15:00–15:30  ·  1:1  ·  Internal</th></tr><tr><td>Context</td><td>Weekly coaching 1:1. Review Q2 quota progress ($450K target) and deal strategy on Greenline + Apex.</td></tr><tr><td>Prep</td><td>Bring forecast view; flag NovaTech risk and ask for help on BrightPath CFO engagement.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Lisa Tran (Sales Manager)</td></tr></table></div><div class="doc-table"><table><tr><th>Proposal Prep — Greenline Pricing16:00–16:30  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Build negotiation-ready pricing scenarios for Greenline ahead of next week&#x27;s negotiation call.</td></tr><tr><td>Prep</td><td>Model 3 discount tiers; confirm approval threshold with Lisa for anything beyond 12%.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Email Follow-ups &amp; Notes17:00–17:30  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>End-of-day wrap. Send recap emails for Greenline proposal review and NovaTech re-engagement; log call notes in CRM.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><h5>Thursday, May 6</h5><div class="doc-table"><table><tr><th>Team Standup09:00–09:15  ·  Standup  ·  Internal</th></tr><tr><td>Context</td><td>Daily sync. Today: Apex technical deep dive and Coastal inbound discovery.</td></tr><tr><td>Prep</td><td>Confirm Kevin Lee is set for the Apex deep dive.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Lisa Tran, Carlos Mendez, Kevin Lee</td></tr></table></div><div class="doc-table"><table><tr><th>Apex Financial — Technical Deep Dive w/ Kevin Lee09:30–10:15  ·  Deal Call  ·  External</th></tr><tr><td>Context</td><td>Technical validation — SSO/SAML, SOC2, data residency, API throughput.</td></tr><tr><td>Prep</td><td>Kevin to demo security architecture; have SOC2 report and DPA ready. Objection to expect: data residency for EU clients.</td></tr><tr><td>Decisions</td><td>Clear technical blockers so we can move to proposal next week.</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Kevin Lee (Solutions Engineer), Priya Sharma (Apex Head of Eng), Tom Beck (Apex Security)</td></tr></table></div><div class="doc-table"><table><tr><th>Coastal Health Systems — Inbound Discovery10:30–11:15  ·  Deal Call  ·  External</th></tr><tr><td>Context</td><td>First call on an inbound lead (sourced by Carlos). Uncover pain around patient-scheduling workflows and compliance.</td></tr><tr><td>Prep</td><td>Healthcare discovery framework; HIPAA talking points. Qualify budget, authority, timeline.</td></tr><tr><td>Decisions</td><td>Earn a product demo as the next step.</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Renee Alvarez (Coastal Dir. of Operations)</td></tr></table></div><div class="doc-table"><table><tr><th>CRM Updates — Log Discovery Notes11:30–12:00  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Log Apex technical outcomes and Coastal discovery notes. Update next steps and close dates.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Deal Strategy — Apex w/ Kevin Lee13:00–13:30  ·  Deal Strategy  ·  Internal</th></tr><tr><td>Context</td><td>Debrief Apex deep dive; align on remaining technical risks and what to include in the proposal.</td></tr><tr><td>Prep</td><td>Capture open security items and EU data-residency answer.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Kevin Lee (SE)</td></tr></table></div><div class="doc-table"><table><tr><th>Prospecting Block — Account Research14:00–14:45  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Research net-new healthcare and fintech accounts; build account plans for top 5 targets.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Coastal — Demo Prep &amp; Stakeholder Mapping15:00–15:45  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Build a tailored demo script for Coastal around patient-scheduling. Map stakeholders (Ops, IT, Compliance) and identify champion vs. economic buyer.</td></tr><tr><td>Prep</td><td>Coordinate with Kevin Lee for next week&#x27;s demo.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Pipeline Review w/ Marcus Chen16:00–16:30  ·  Pipeline Review  ·  Internal</th></tr><tr><td>Context</td><td>Mid-week pipeline check with leadership. Walk the 6 active deals, commit/best-case forecast, and risks (NovaTech stalling).</td></tr><tr><td>Prep</td><td>Have $450K quota attainment math and weighted pipeline ready.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Marcus Chen (VP Sales), Lisa Tran (Sales Manager)</td></tr></table></div><div class="doc-table"><table><tr><th>Email Follow-ups16:45–17:15  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Send Apex technical recap (cc Kevin Lee) and Coastal discovery recap with proposed demo times.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><h5>Friday, May 7</h5><div class="doc-table"><table><tr><th>Team Standup09:00–09:15  ·  Standup  ·  Internal</th></tr><tr><td>Context</td><td>Daily sync. Today: BrightPath CFO intro and Meridian first discovery; Week 1 forecast due.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Lisa Tran, Carlos Mendez, Kevin Lee</td></tr></table></div><div class="doc-table"><table><tr><th>BrightPath Education — CFO Intro Call09:30–10:15  ·  Deal Call  ·  External</th></tr><tr><td>Context</td><td>First exec-level intro. Champion Raj is bringing in CFO Helen to assess business case. Largest deal in pipeline.</td></tr><tr><td>Prep</td><td>Lead with ROI and TCO; tailor to budget-conscious education buyer. Have case study from a peer district ready.</td></tr><tr><td>Decisions</td><td>Secure a formal CFO working session next week.</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Helen Cho (BrightPath CFO), Raj Patel (BrightPath Champion / VP Product)</td></tr></table></div><div class="doc-table"><table><tr><th>Meridian Retail — First Discovery Call10:30–11:15  ·  Deal Call  ·  External</th></tr><tr><td>Context</td><td>First discovery call (outbound-sourced). Explore pain in inventory and store-ops reporting.</td></tr><tr><td>Prep</td><td>Retail discovery questions; quantify cost of current manual reporting.</td></tr><tr><td>Decisions</td><td>Qualify and earn a tailored demo next week.</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Greg Foster (Meridian Dir. of Retail Ops)</td></tr></table></div><div class="doc-table"><table><tr><th>CRM Updates &amp; Activity Logging11:30–12:00  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Log BrightPath CFO intro and Meridian discovery. Update stages: BrightPath → CFO Meeting (next), Meridian → Demo (next).</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Coastal Health — Demo Prep w/ Kevin Lee13:00–13:45  ·  Admin  ·  Internal</th></tr><tr><td>Context</td><td>Dry-run the Coastal demo for next Tuesday. Align on patient-scheduling use case and HIPAA story.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Kevin Lee (SE)</td></tr></table></div><div class="doc-table"><table><tr><th>SDR Weekly Handoff Sync — Carlos14:00–14:30  ·  SDR Sync  ·  Internal</th></tr><tr><td>Context</td><td>Weekly handoff review. Recap meetings booked this week and lock next week&#x27;s targets.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Jordan Reyes (AE), Carlos Mendez (SDR)</td></tr></table></div><div class="doc-table"><table><tr><th>Forecast Submission — Week 114:45–15:30  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>Submit weekly forecast to Marcus Chen. Categorize deals: Commit (Greenline), Best Case (Apex, BrightPath), Pipeline (Coastal, Meridian), Omit (NovaTech).</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Prospecting &amp; Outbound Block15:30–16:15  ·  Admin  ·  Solo</th></tr><tr><td>Context</td><td>End-of-week outbound push to keep top-of-funnel healthy for Q2.</td></tr><tr><td>Decisions</td><td>—</td></tr></table></div><div class="doc-table"><table><tr><th>Lunch &amp; Learn: Negotiation Skills Training16:30–17:15  ·  Training  ·  Internal</th></tr><tr><td>Context</td><td>Team enablement session on negotiation tactics — anchoring, trading concessions, protecting margin. Directly useful for the Greenline negotiation next week.</td></tr><tr><td>Decisions</td><td>—</td></tr><tr><td>Attendees</td><td>Sales team, guest facilitator</td></tr></table></div><h5>End-of-Week Checklist</h5><p>Actions tied to this week’s actual meeting outcomes:</p><ul><li>Greenline: send the 3-tier pricing scenarios built in Friday’s prep; confirm Finance (Mark Reilly) looped in for Monday’s negotiation.</li><li>Apex: get Kevin Lee’s written EU data-residency answer and security follow-ups from the deep dive; assemble the proposal for next week.</li><li>BrightPath: schedule the formal CFO working session with Helen Cho and Raj Patel; prepare the peer-district ROI/TCO case study.</li><li>Coastal: lock the Tuesday demo with Kevin Lee; finalize the patient-scheduling demo script and HIPAA talking points.</li><li>Meridian: send the demo invite to Greg Foster; quantify the cost of their current manual store-ops reporting for the demo.</li><li>NovaTech: decide — send the low-commitment pilot offer to Sam Okoro, or mark at-risk/disqualify ahead of the pipeline review.</li><li>Forecast: confirm Week 1 forecast submitted to Marcus Chen (Commit: Greenline; Best case: Apex, BrightPath; Pipeline: Coastal, Meridian; Omit: NovaTech).</li><li>CRM hygiene: verify all 6 deals have accurate stage, next step, and close date logged.</li></ul></div></details><details><summary>Completion report</summary><div class="doc-body"><h4>Supercharge Sales Activity — Completion Report</h4><p>Cowork AE Sales Simulation · Persona: Jordan Reyes (Account Executive) · Sprint: May 5–16, 2027 (weekdays) · Timezone: Asia/Manila</p><p>Prepared by Claude · Google account: nirpor1414@gmail.com · All data tagged (TEST)</p><div class="doc-table"><table><tr><th>✓ All 7 core sections completed and verified. All 3 bonus challenges completed. TEST data fully cleaned up afterward.</th></tr></table></div><h5>Results at a Glance</h5><div class="doc-table"><table><tr><th>Calendar events created</th><th>72 color-coded (TEST) events · 9/day across 8 working days · 0 on weekends</th></tr><tr><td>Total scheduled hours</td><td>42.25 hours over the 2-week sprint</td></tr><tr><td>Selling time (external deal calls)</td><td>30.2% — in line with the 30–35% AE benchmark</td></tr><tr><td>Internal + admin time</td><td>69.8% (meetings, CRM, prospecting, forecasting)</td></tr><tr><td>Deals tracked</td><td>6 deals · $566K total pipeline</td></tr><tr><td>Closed-Won</td><td>Greenline Logistics — $76K (verbal commit)</td></tr><tr><td>Closed-Lost</td><td>NovaTech Solutions — $95K (no budget / no champion)</td></tr><tr><td>Q2 quota attainment</td><td>$76K / $450K = 16.9% · $374K still needed in June</td></tr><tr><td>Gmail drafts created</td><td>3 stage-matched follow-ups (early / mid / late)</td></tr><tr><td>Cleanup</td><td>72 TEST events deleted · calendar verified clean</td></tr></table></div><h5>Step-by-Step Completion &amp; Success Checks</h5><p>Section 1 — System Setup &amp; Connection Tests</p><p>Section 2 — Simulation Rules</p><p>Section 3 — Calendar Build</p><p>Section 4 — Weekly Briefing (Week 1, May 5–9)</p><p>Section 5 — Pipeline Analytics (.xlsx)</p><p>Section 6 — Follow-Up Emails</p><p>Section 7 — Cleanup</p><p>Bonus Challenges</p><h5>Discussion Questions</h5><p>Time ROI</p><p>Selling Time</p><p>Deal Velocity</p><p>Real Application</p><p>Tool Gaps</p><h5>Deliverables in this Folder</h5><p>Note: Live Google Calendar and Canva screenshots were shown inline in the Cowork chat during the run; saved image renders of the same data are included in /screenshots for the folder.</p></div></details></div>
         </div>
         <div class="art-figs gallery">
           <figure class="plate"><picture><source type="image/avif" srcset="assets/cowork/sales-calendar.avif"><source type="image/webp" srcset="assets/cowork/sales-calendar.webp"><img src="assets/cowork/sales-calendar.png" alt="Supercharge sales calendar, week 1" width="1130" height="1424" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.2</b> Supercharge — week 1</figcaption></figure>
@@ -454,10 +453,986 @@
             <li>Backdated test-email generator for safe runs</li>
             <li>Ten categories · auto-labels · read-only scan mode</li>
           </ul>
-          <ul class="deliverables">
-            <li><a href="assets/deliverables/InboxOrganizer.gs" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">GS</span> InboxOrganizer.gs</a></li>
-            <li><a href="assets/deliverables/GenerateTestEmails.gs" target="_blank" rel="noopener noreferrer" title="Opens in a new tab"><span class="ext">GS</span> GenerateTestEmails.gs</a></li>
-          </ul>
+          <div class="docs"><details><summary>InboxOrganizer.gs</summary><div class="doc-body"><p class="doc-meta">Google Apps Script · 573 lines · read on-page</p><pre class="doc-code"><code>/**
+ * InboxOrganizer.gs  —  AI-generated Gmail inbox organizer (Google Apps Script)
+ * ---------------------------------------------------------------------------
+ * Three entry points:
+ *   1. analyzeInbox()   — READ-ONLY. Scans inbox, reports categories/senders.
+ *   2. organizeInbox()  — Creates AutoSort/* labels, applies them, emails a report.
+ *   3. resetAutoSort()  — Removes every AutoSort label (full reset / re-run).
+ *
+ * SETUP:
+ *   1. script.google.com -&gt; new project -&gt; paste this in.
+ *   2. (No advanced services needed — uses the built-in GmailApp service.)
+ *   3. Run analyzeInbox() first (safe, changes nothing). Approve scopes.
+ *   4. Review the log, then run organizeInbox().
+ *   5. resetAutoSort() if you want to start over.
+ * ---------------------------------------------------------------------------
+ */
+
+// ===========================================================================
+// CONFIG
+// ===========================================================================
+const ORG = {
+  PARENT: &#x27;AutoSort&#x27;,          // parent label namespace -&gt; AutoSort/&lt;Category&gt;
+  MAX_THREADS: 300,            // cap for performance (Gmail quota-friendly)
+  PAGE_SIZE: 100,              // threads fetched per page
+  REPORT_TO: &#x27;&#x27;,               // &#x27;&#x27; = send the report to yourself (active user)
+  APPLY_TO_QUERY: &#x27;in:inbox&#x27;,  // which mail to organize
+};
+
+// Canonical category list -&gt; becomes AutoSort/&lt;name&gt; sub-labels.
+const CATEGORIES = [
+  &#x27;Clients &amp; Follow-ups&#x27;,
+  &#x27;Meetings &amp; Calendar&#x27;,
+  &#x27;Receipts &amp; Payments&#x27;,
+  &#x27;Shipping &amp; Delivery&#x27;,
+  &#x27;Jobs &amp; Careers&#x27;,
+  &#x27;Newsletters&#x27;,
+  &#x27;Promotions &amp; Offers&#x27;,
+  &#x27;Social Notifications&#x27;,
+  &#x27;Spam &amp; Junk&#x27;,
+  &#x27;Uncategorized&#x27;,
+];
+
+// ===========================================================================
+// STEP 1 — ANALYSIS (READ-ONLY)
+// ===========================================================================
+/**
+ * Scans the inbox and prints a report. Makes NO changes to your mailbox.
+ */
+function analyzeInbox() {
+  const threads = fetchThreads_(ORG.APPLY_TO_QUERY, ORG.MAX_THREADS);
+  const stats = blankStats_();
+
+  threads.forEach(thread =&gt; {
+    const msg = thread.getMessages()[0];               // classify on first msg
+    const info = extractInfo_(msg);
+    const category = classify_(info);
+
+    stats.byCategory[category] = (stats.byCategory[category] || 0) + 1;
+    stats.bySenderDomain[info.domain] = (stats.bySenderDomain[info.domain] || 0) + 1;
+    stats.total++;
+    if (thread.isUnread()) stats.unread++;
+  });
+
+  printReport_(&#x27;READ-ONLY ANALYSIS&#x27;, stats, threads.length);
+  return stats;   // also returned for programmatic use
+}
+
+// ===========================================================================
+// STEP 2 — ORGANIZE (creates labels, applies them, emails report)
+// ===========================================================================
+function organizeInbox() {
+  // 1. Ensure the full AutoSort/* label tree exists.
+  const labels = ensureLabels_();
+
+  // 2. Scan + classify + apply.
+  const threads = fetchThreads_(ORG.APPLY_TO_QUERY, ORG.MAX_THREADS);
+  const stats = blankStats_();
+  const examples = {};   // category -&gt; a few example subjects
+
+  threads.forEach(thread =&gt; {
+    const msg = thread.getMessages()[0];
+    const info = extractInfo_(msg);
+    const category = classify_(info);
+
+    labels[category].addToThread(thread);              // &lt;-- applies the label
+
+    stats.byCategory[category] = (stats.byCategory[category] || 0) + 1;
+    stats.bySenderDomain[info.domain] = (stats.bySenderDomain[info.domain] || 0) + 1;
+    stats.total++;
+    if (thread.isUnread()) stats.unread++;
+
+    (examples[category] = examples[category] || []);
+    if (examples[category].length &lt; 3) examples[category].push(info.subject);
+  });
+
+  printReport_(&#x27;ORGANIZE RUN&#x27;, stats, threads.length);
+
+  // 3. Email a summary report.
+  sendReportEmail_(stats, examples, threads.length);
+
+  Logger.log(&#x27;Done. Check the Gmail sidebar for the %s/ label tree.&#x27;, ORG.PARENT);
+  return stats;
+}
+
+// ===========================================================================
+// STEP 3 — RESET (optional)
+// ===========================================================================
+/**
+ * Removes labels from threads and deletes every AutoSort/* label so you can
+ * re-run cleanly. Does NOT delete any email.
+ */
+function resetAutoSort() {
+  const all = GmailApp.getUserLabels();
+  let removed = 0;
+  all.forEach(label =&gt; {
+    const name = label.getName();
+    if (name === ORG.PARENT || name.indexOf(ORG.PARENT + &#x27;/&#x27;) === 0) {
+      // Detach from all threads first (in pages), then delete the label.
+      let threads;
+      do {
+        threads = label.getThreads(0, 100);
+        threads.forEach(t =&gt; label.removeFromThread(t));
+      } while (threads.length &gt; 0);
+      GmailApp.deleteLabel(label);
+      removed++;
+    }
+  });
+  Logger.log(&#x27;Reset complete. Removed %s AutoSort label(s).&#x27;, removed);
+}
+
+// ===========================================================================
+// CLASSIFIER  (heuristic rules over sender + subject + snippet)
+// ===========================================================================
+/**
+ * Returns one of CATEGORIES. Rules are ordered: highest-confidence /
+ * most-specific signals are checked first; falls back to Uncategorized.
+ */
+function classify_(info) {
+  const from = info.from.toLowerCase();
+  const domain = info.domain.toLowerCase();
+  const subj = info.subject.toLowerCase();
+  const text = (subj + &#x27; &#x27; + info.snippet).toLowerCase();
+  const has = (s, arr) =&gt; arr.some(k =&gt; s.indexOf(k) !== -1);
+
+  // --- Spam &amp; Junk (check early; strong scam signals) ---
+  if (has(text, [&#x27;you won&#x27;, &#x27;winner&#x27;, &#x27;congratulations!!!&#x27;, &#x27;claim your&#x27;, &#x27;unclaimed funds&#x27;,
+                 &#x27;act now&#x27;, &#x27;risk-free&#x27;, &#x27;verify within 24&#x27;, &#x27;suspended&#x27;, &#x27;miracle&#x27;,
+                 &#x27;crypto&#x27;, &#x27;lottery&#x27;, &#x27;wire transfer&#x27;, &#x27;prince&#x27;, &#x27;viagra&#x27;]) ||
+      has(domain, [&#x27;.biz&#x27;, &#x27;.info&#x27;, &#x27;.top&#x27;, &#x27;claim-&#x27;, &#x27;rewards-now&#x27;, &#x27;secure-verify&#x27;])) {
+    return &#x27;Spam &amp; Junk&#x27;;
+  }
+
+  // --- Receipts &amp; Payments ---
+  if (has(subj, [&#x27;receipt&#x27;, &#x27;invoice&#x27;, &#x27;payment received&#x27;, &#x27;order confirmed&#x27;, &#x27;order #&#x27;,
+                 &#x27;your order&#x27;, &#x27;transaction&#x27;, &#x27;paid&#x27;, &#x27;billing&#x27;, &#x27;subscription renew&#x27;]) ||
+      has(from, [&#x27;receipt&#x27;, &#x27;billing&#x27;, &#x27;invoice&#x27;, &#x27;no-reply@&#x27;, &#x27;payments@&#x27;])
+        &amp;&amp; has(text, [&#x27;$&#x27;, &#x27;order&#x27;, &#x27;charged&#x27;, &#x27;total&#x27;])) {
+    return &#x27;Receipts &amp; Payments&#x27;;
+  }
+
+  // --- Shipping &amp; Delivery ---
+  if (has(text, [&#x27;shipped&#x27;, &#x27;out for delivery&#x27;, &#x27;tracking number&#x27;, &#x27;on its way&#x27;,
+                 &#x27;delivered&#x27;, &#x27;package&#x27;, &#x27;arriving&#x27;, &#x27;fedex&#x27;, &#x27;ups&#x27;, &#x27;usps&#x27;, &#x27;dhl&#x27;])) {
+    return &#x27;Shipping &amp; Delivery&#x27;;
+  }
+
+  // --- Meetings &amp; Calendar ---
+  if (has(subj, [&#x27;invitation:&#x27;, &#x27;meeting&#x27;, &#x27;invite&#x27;, &#x27;calendar&#x27;, &#x27;accepted:&#x27;, &#x27;declined:&#x27;,
+                 &#x27;reschedul&#x27;, &#x27;zoom&#x27;, &#x27;google meet&#x27;, &#x27;webex&#x27;, &#x27;rsvp&#x27;, &#x27;agenda&#x27;]) ||
+      has(from, [&#x27;calendar&#x27;, &#x27;invites@&#x27;, &#x27;scheduler&#x27;])) {
+    return &#x27;Meetings &amp; Calendar&#x27;;
+  }
+
+  // --- Jobs &amp; Careers ---
+  if (has(text, [&#x27;job&#x27;, &#x27;hiring&#x27;, &#x27;role&#x27;, &#x27;opening&#x27;, &#x27;apply&#x27;, &#x27;recruit&#x27;, &#x27;career&#x27;,
+                 &#x27;position&#x27;, &#x27;opportunity at&#x27;]) ||
+      has(domain, [&#x27;linkedin&#x27;, &#x27;indeed&#x27;, &#x27;glassdoor&#x27;, &#x27;wellfound&#x27;, &#x27;hired&#x27;, &#x27;ziprecruiter&#x27;])) {
+    return &#x27;Jobs &amp; Careers&#x27;;
+  }
+
+  // --- Social Notifications ---
+  if (has(domain, [&#x27;facebook&#x27;, &#x27;instagram&#x27;, &#x27;twitter&#x27;, &#x27;x.com&#x27;, &#x27;linkedin&#x27;, &#x27;tiktok&#x27;,
+                   &#x27;reddit&#x27;, &#x27;pinterest&#x27;, &#x27;youtube&#x27;, &#x27;snapchat&#x27;, &#x27;threads&#x27;]) ||
+      has(text, [&#x27;tagged you&#x27;, &#x27;mentioned you&#x27;, &#x27;new follower&#x27;, &#x27;liked your&#x27;,
+                 &#x27;commented on&#x27;, &#x27;friend request&#x27;, &#x27;connection request&#x27;])) {
+    return &#x27;Social Notifications&#x27;;
+  }
+
+  // --- Promotions &amp; Offers ---
+  if (has(text, [&#x27;% off&#x27;, &#x27;sale&#x27;, &#x27;deal&#x27;, &#x27;discount&#x27;, &#x27;coupon&#x27;, &#x27;promo&#x27;, &#x27;limited time&#x27;,
+                 &#x27;save now&#x27;, &#x27;shop now&#x27;, &#x27;free shipping&#x27;, &#x27;exclusive offer&#x27;, &#x27;clearance&#x27;,
+                 &#x27;today only&#x27;, &#x27;last chance&#x27;]) ||
+      has(from, [&#x27;deals@&#x27;, &#x27;offers@&#x27;, &#x27;promos@&#x27;, &#x27;marketing@&#x27;])) {
+    return &#x27;Promotions &amp; Offers&#x27;;
+  }
+
+  // --- Newsletters ---
+  if (has(text, [&#x27;newsletter&#x27;, &#x27;this week&#x27;, &#x27;weekly digest&#x27;, &#x27;daily brief&#x27;, &#x27;issue #&#x27;,
+                 &#x27;unsubscribe&#x27;, &#x27;read more&#x27;, &#x27;in this edition&#x27;]) ||
+      has(from, [&#x27;newsletter&#x27;, &#x27;digest&#x27;, &#x27;news@&#x27;, &#x27;updates@&#x27;, &#x27;hello@&#x27;])) {
+    return &#x27;Newsletters&#x27;;
+  }
+
+  // --- Clients &amp; Follow-ups (personal/business correspondence) ---
+  // Heuristic: a named human sender, conversational subject, low marketing signal.
+  if (looksPersonal_(info) ||
+      has(subj, [&#x27;re:&#x27;, &#x27;fwd:&#x27;, &#x27;following up&#x27;, &#x27;follow up&#x27;, &#x27;checking in&#x27;,
+                 &#x27;next steps&#x27;, &#x27;proposal&#x27;, &#x27;quick question&#x27;, &#x27;circling back&#x27;])) {
+    return &#x27;Clients &amp; Follow-ups&#x27;;
+  }
+
+  return &#x27;Uncategorized&#x27;;
+}
+
+// A sender &quot;looks personal&quot; if the display name has two name-like words and the
+// address is not an obvious no-reply/marketing alias.
+function looksPersonal_(info) {
+  const name = (info.name || &#x27;&#x27;).trim();
+  const local = (info.from.split(&#x27;@&#x27;)[0] || &#x27;&#x27;).toLowerCase();
+  const noreply = [&#x27;no-reply&#x27;, &#x27;noreply&#x27;, &#x27;donotreply&#x27;, &#x27;mailer&#x27;, &#x27;notifications&#x27;,
+                   &#x27;support&#x27;, &#x27;team&#x27;, &#x27;hello&#x27;, &#x27;info&#x27;, &#x27;news&#x27;, &#x27;deals&#x27;, &#x27;offers&#x27;];
+  if (noreply.some(n =&gt; local.indexOf(n) !== -1)) return false;
+  return /^[A-Za-z&#x27;.-]+\s+[A-Za-z&#x27;.-]+/.test(name);
+}
+
+// ===========================================================================
+// HELPERS — fetching, info extraction, labels, stats, reporting
+// ===========================================================================
+function fetchThreads_(query, cap) {
+  const out = [];
+  let start = 0;
+  while (out.length &lt; cap) {
+    const page = GmailApp.search(query, start, Math.min(ORG.PAGE_SIZE, cap - out.length));
+    if (!page.length) break;
+    page.forEach(t =&gt; out.push(t));
+    start += page.length;
+    if (page.length &lt; ORG.PAGE_SIZE) break;
+  }
+  return out.slice(0, cap);
+}
+
+function extractInfo_(msg) {
+  const from = msg.getFrom() || &#x27;&#x27;;
+  const m = from.match(/^\s*&quot;?([^&quot;&lt;]*?)&quot;?\s*&lt;([^&gt;]+)&gt;\s*$/);
+  const name = m ? m[1].trim() : &#x27;&#x27;;
+  const addr = m ? m[2].trim() : from.trim();
+  const domain = (addr.split(&#x27;@&#x27;)[1] || &#x27;unknown&#x27;).toLowerCase();
+  let snippet = &#x27;&#x27;;
+  try { snippet = msg.getPlainBody().slice(0, 240); } catch (e) {}
+  return {
+    from: addr,
+    name: name,
+    domain: domain,
+    subject: msg.getSubject() || &#x27;(no subject)&#x27;,
+    snippet: snippet,
+    date: msg.getDate(),
+  };
+}
+
+// Create AutoSort + all sub-labels; return { &#x27;Category&#x27;: Label } map.
+function ensureLabels_() {
+  getOrCreate_(ORG.PARENT);   // parent namespace
+  const map = {};
+  CATEGORIES.forEach(cat =&gt; {
+    map[cat] = getOrCreate_(ORG.PARENT + &#x27;/&#x27; + sanitize_(cat));
+  });
+  return map;
+}
+
+function getOrCreate_(name) {
+  return GmailApp.getUserLabelByName(name) || GmailApp.createLabel(name);
+}
+
+// Gmail label names can&#x27;t contain some characters; keep it readable.
+function sanitize_(s) {
+  return s.replace(/[\/\\]/g, &#x27;-&#x27;);   // &#x27;&amp;&#x27; and spaces are allowed in labels
+}
+
+function blankStats_() {
+  return { total: 0, unread: 0, byCategory: {}, bySenderDomain: {} };
+}
+
+function printReport_(title, stats, scanned) {
+  Logger.log(&#x27;================ %s ================&#x27;, title);
+  Logger.log(&#x27;Scanned threads: %s   (unread: %s)&#x27;, scanned, stats.unread);
+
+  Logger.log(&#x27;--- Category breakdown ---&#x27;);
+  sortedEntries_(stats.byCategory).forEach(([k, v]) =&gt;
+    Logger.log(&#x27;  %s  —  %s (%s%%)&#x27;, pad_(k, 24), v, pct_(v, stats.total)));
+
+  Logger.log(&#x27;--- Top sender domains ---&#x27;);
+  sortedEntries_(stats.bySenderDomain).slice(0, 12).forEach(([k, v]) =&gt;
+    Logger.log(&#x27;  %s  —  %s&#x27;, pad_(k, 30), v));
+
+  Logger.log(&#x27;--- Distribution summary ---&#x27;);
+  Logger.log(&#x27;  Total: %s | Categories used: %s | Unique domains: %s&#x27;,
+    stats.total, Object.keys(stats.byCategory).length, Object.keys(stats.bySenderDomain).length);
+}
+
+function sendReportEmail_(stats, examples, scanned) {
+  const to = ORG.REPORT_TO || Session.getActiveUser().getEmail();
+  const subject = &#x27;AutoSort report — &#x27; + stats.total + &#x27; emails organized&#x27;;
+
+  let html = &#x27;&lt;div style=&quot;font-family:Arial,Helvetica,sans-serif;max-width:640px&quot;&gt;&#x27;;
+  html += &#x27;&lt;h2 style=&quot;margin:0 0 4px&quot;&gt;AutoSort &amp;mdash; Inbox Organized&lt;/h2&gt;&#x27;;
+  html += &#x27;&lt;p style=&quot;color:#555;margin:0 0 16px&quot;&gt;Scanned &lt;b&gt;&#x27; + scanned +
+          &#x27;&lt;/b&gt; inbox threads (&#x27; + stats.unread + &#x27; unread). Labels applied under &lt;code&gt;&#x27; +
+          ORG.PARENT + &#x27;/&lt;/code&gt;.&lt;/p&gt;&#x27;;
+
+  // Category table
+  html += &#x27;&lt;table style=&quot;border-collapse:collapse;width:100%;font-size:14px&quot;&gt;&#x27;;
+  html += &#x27;&lt;tr style=&quot;background:#f2f4f7&quot;&gt;&lt;th style=&quot;text-align:left;padding:8px&quot;&gt;Category&lt;/th&gt;&#x27; +
+          &#x27;&lt;th style=&quot;text-align:right;padding:8px&quot;&gt;Count&lt;/th&gt;&#x27; +
+          &#x27;&lt;th style=&quot;text-align:right;padding:8px&quot;&gt;Share&lt;/th&gt;&lt;/tr&gt;&#x27;;
+  sortedEntries_(stats.byCategory).forEach(([k, v]) =&gt; {
+    html += &#x27;&lt;tr style=&quot;border-top:1px solid #eee&quot;&gt;&#x27; +
+            &#x27;&lt;td style=&quot;padding:8px&quot;&gt;&#x27; + esc_(k) + &#x27;&lt;/td&gt;&#x27; +
+            &#x27;&lt;td style=&quot;padding:8px;text-align:right&quot;&gt;&#x27; + v + &#x27;&lt;/td&gt;&#x27; +
+            &#x27;&lt;td style=&quot;padding:8px;text-align:right&quot;&gt;&#x27; + pct_(v, stats.total) + &#x27;%&lt;/td&gt;&lt;/tr&gt;&#x27;;
+  });
+  html += &#x27;&lt;/table&gt;&#x27;;
+
+  // Top domains
+  html += &#x27;&lt;h3 style=&quot;margin:20px 0 6px&quot;&gt;Top sender domains&lt;/h3&gt;&lt;ul style=&quot;font-size:14px;color:#333&quot;&gt;&#x27;;
+  sortedEntries_(stats.bySenderDomain).slice(0, 10).forEach(([k, v]) =&gt;
+    html += &#x27;&lt;li&gt;&#x27; + esc_(k) + &#x27; — &#x27; + v + &#x27;&lt;/li&gt;&#x27;);
+  html += &#x27;&lt;/ul&gt;&#x27;;
+
+  // Examples per category
+  html += &#x27;&lt;h3 style=&quot;margin:20px 0 6px&quot;&gt;Example subjects&lt;/h3&gt;&#x27;;
+  Object.keys(examples).forEach(cat =&gt; {
+    html += &#x27;&lt;p style=&quot;margin:8px 0 2px;font-weight:bold;font-size:14px&quot;&gt;&#x27; + esc_(cat) + &#x27;&lt;/p&gt;&lt;ul style=&quot;margin:0 0 8px;font-size:13px;color:#555&quot;&gt;&#x27;;
+    examples[cat].forEach(s =&gt; html += &#x27;&lt;li&gt;&#x27; + esc_(s) + &#x27;&lt;/li&gt;&#x27;);
+    html += &#x27;&lt;/ul&gt;&#x27;;
+  });
+
+  html += &#x27;&lt;p style=&quot;color:#888;font-size:12px;margin-top:24px&quot;&gt;Generated by InboxOrganizer.gs · &#x27; +
+          new Date().toLocaleString() + &#x27;&lt;/p&gt;&lt;/div&gt;&#x27;;
+
+  GmailApp.sendEmail(to, subject, &#x27;See the HTML version of this AutoSort report.&#x27;, { htmlBody: html });
+  Logger.log(&#x27;Summary report emailed to %s&#x27;, to);
+}
+
+// --- tiny utils ---
+function sortedEntries_(obj) { return Object.keys(obj).map(k =&gt; [k, obj[k]]).sort((a, b) =&gt; b[1] - a[1]); }
+function pct_(n, total) { return total ? Math.round((n / total) * 100) : 0; }
+function pad_(s, n) { s = String(s); return s.length &gt;= n ? s : s + &#x27; &#x27;.repeat(n - s.length); }
+function esc_(s) { return String(s).replace(/[&amp;&lt;&gt;]/g, c =&gt; ({ &#x27;&amp;&#x27;: &#x27;&amp;amp;&#x27;, &#x27;&lt;&#x27;: &#x27;&amp;lt;&#x27;, &#x27;&gt;&#x27;: &#x27;&amp;gt;&#x27; }[c])); }
+
+
+// ===========================================================================
+// PHASE 3 — AI-STYLE REPORT (Word doc in Drive + Gmail draft)
+// ===========================================================================
+/**
+ * generateReport()
+ *   - Re-scans the inbox and classifies it (read-only; no labels changed here).
+ *   - Computes category breakdown, importance distribution, and top senders.
+ *   - Builds a professional report as a Google Doc, then exports a .docx copy
+ *     to your Drive (downloadable, Word format).
+ *   - Creates a Gmail DRAFT summarizing the report with the .docx attached.
+ *
+ * Review the draft in Gmail, then hit Send (or run sendReportDraft() to send
+ * the most recent AutoSort draft automatically).
+ *
+ * Run organizeInbox() first if you want the &quot;Label system created&quot; section to
+ * reflect labels that actually exist.
+ */
+function generateReport() {
+  const threads = fetchThreads_(ORG.APPLY_TO_QUERY, ORG.MAX_THREADS);
+  const stats = blankStats_();
+  const importance = { High: 0, Medium: 0, Low: 0 };
+  const senders = {};      // &quot;Name &lt;addr&gt;&quot; -&gt; count
+  const examples = {};     // category -&gt; sample subjects
+
+  threads.forEach(thread =&gt; {
+    const msg = thread.getMessages()[0];
+    const info = extractInfo_(msg);
+    const category = classify_(info);
+
+    stats.byCategory[category] = (stats.byCategory[category] || 0) + 1;
+    stats.bySenderDomain[info.domain] = (stats.bySenderDomain[info.domain] || 0) + 1;
+    stats.total++;
+    if (thread.isUnread()) stats.unread++;
+
+    importance[importanceOf_(category)]++;
+
+    const key = (info.name ? info.name + &#x27; &#x27; : &#x27;&#x27;) + &#x27;&lt;&#x27; + info.from + &#x27;&gt;&#x27;;
+    senders[key] = (senders[key] || 0) + 1;
+
+    (examples[category] = examples[category] || []);
+    if (examples[category].length &lt; 3) examples[category].push(info.subject);
+  });
+
+  const recs = buildRecommendations_(stats, importance);
+
+  // Build Google Doc, export .docx to Drive.
+  const doc = buildReportDoc_(stats, importance, senders, examples, recs, threads.length);
+  const docxFile = exportAsDocx_(doc.getId(), doc.getName());
+
+  // Create the Gmail summary draft with the Word doc attached.
+  const draft = createSummaryDraft_(stats, importance, senders, recs, threads.length, docxFile);
+
+  Logger.log(&#x27;================ PHASE 3 REPORT ================&#x27;);
+  Logger.log(&#x27;Google Doc : %s&#x27;, doc.getUrl());
+  Logger.log(&#x27;Word (.docx): %s&#x27;, docxFile.getUrl());
+  Logger.log(&#x27;Gmail draft : created (subject &quot;%s&quot;). Review, then Send.&#x27;, draft.getMessage().getSubject());
+  return { docUrl: doc.getUrl(), docxUrl: docxFile.getUrl() };
+}
+
+/** Optional: send the most recent AutoSort report draft via your Gmail. */
+function sendReportDraft() {
+  const drafts = GmailApp.getDrafts();
+  for (let i = drafts.length - 1; i &gt;= 0; i--) {
+    if (drafts[i].getMessage().getSubject().indexOf(&#x27;AutoSort Inbox Report&#x27;) === 0) {
+      drafts[i].send();
+      Logger.log(&#x27;Sent report draft to recipient.&#x27;);
+      return;
+    }
+  }
+  Logger.log(&#x27;No AutoSort report draft found — run generateReport() first.&#x27;);
+}
+
+// Importance heuristic: map each category to High / Medium / Low.
+function importanceOf_(category) {
+  const high = [&#x27;Clients &amp; Follow-ups&#x27;, &#x27;Meetings &amp; Calendar&#x27;, &#x27;Jobs &amp; Careers&#x27;];
+  const low  = [&#x27;Promotions &amp; Offers&#x27;, &#x27;Social Notifications&#x27;, &#x27;Spam &amp; Junk&#x27;, &#x27;Uncategorized&#x27;];
+  if (high.indexOf(category) !== -1) return &#x27;High&#x27;;
+  if (low.indexOf(category) !== -1) return &#x27;Low&#x27;;
+  return &#x27;Medium&#x27;;   // Receipts, Shipping, Newsletters
+}
+
+// Templated, data-driven recommendations (no external AI required).
+function buildRecommendations_(stats, importance) {
+  const recs = [];
+  const c = stats.byCategory;
+  const p = (cat) =&gt; pct_(c[cat] || 0, stats.total);
+
+  if (p(&#x27;Promotions &amp; Offers&#x27;) &gt;= 20)
+    recs.push(&#x27;Promotions make up &#x27; + p(&#x27;Promotions &amp; Offers&#x27;) + &#x27;% of your inbox. Create a Gmail filter to auto-archive AutoSort/Promotions &amp; Offers so they skip the inbox.&#x27;);
+  if ((c[&#x27;Spam &amp; Junk&#x27;] || 0) &gt; 0)
+    recs.push((c[&#x27;Spam &amp; Junk&#x27;]) + &#x27; message(s) classified as Spam &amp; Junk. Review them and block repeat senders, or report as spam.&#x27;);
+  if (p(&#x27;Newsletters&#x27;) &gt;= 15)
+    recs.push(&#x27;Newsletters are &#x27; + p(&#x27;Newsletters&#x27;) + &#x27;% of volume. Consider unsubscribing from low-value lists or routing them to a &quot;Read later&quot; filter.&#x27;);
+  if ((c[&#x27;Clients &amp; Follow-ups&#x27;] || 0) &gt; 0)
+    recs.push(&#x27;You have &#x27; + c[&#x27;Clients &amp; Follow-ups&#x27;] + &#x27; client/follow-up thread(s) — the highest-priority bucket. Triage these first each morning.&#x27;);
+  if (importance.High &gt; 0)
+    recs.push(&#x27;High-importance mail is &#x27; + pct_(importance.High, stats.total) + &#x27;% of the inbox. A saved search on AutoSort high-priority labels gives you a focused daily view.&#x27;);
+  if (stats.unread &gt; stats.total * 0.5)
+    recs.push(&#x27;Over half of scanned threads are unread (&#x27; + stats.unread + &#x27;). Batch-process by label to clear the backlog faster.&#x27;);
+  if (!recs.length)
+    recs.push(&#x27;Your inbox is well balanced — keep using the AutoSort labels to maintain triage hygiene.&#x27;);
+  return recs;
+}
+
+// ---- Document builder (Google Doc) ----
+function buildReportDoc_(stats, importance, senders, examples, recs, scanned) {
+  const name = &#x27;AutoSort Inbox Report — &#x27; + Utilities.formatDate(new Date(), Session.getScriptTimeZone(), &#x27;yyyy-MM-dd&#x27;);
+  const doc = DocumentApp.create(name);
+  const body = doc.getBody();
+
+  // Title
+  const title = body.appendParagraph(&#x27;AutoSort — Inbox Organization Report&#x27;);
+  title.setHeading(DocumentApp.ParagraphHeading.TITLE);
+  body.appendParagraph(Utilities.formatDate(new Date(), Session.getScriptTimeZone(), &quot;EEEE, MMMM d, yyyy &#x27;at&#x27; h:mm a&quot;))
+      .setForegroundColor(&#x27;#666666&#x27;);
+
+  // Executive summary
+  body.appendParagraph(&#x27;Executive Summary&#x27;).setHeading(DocumentApp.ParagraphHeading.HEADING1);
+  const topCat = sortedEntries_(stats.byCategory)[0] || [&#x27;Uncategorized&#x27;, 0];
+  body.appendParagraph(
+    &#x27;This report summarizes an automated scan of &#x27; + scanned + &#x27; inbox threads (&#x27; + stats.unread +
+    &#x27; unread). Email was classified into &#x27; + Object.keys(stats.byCategory).length +
+    &#x27; categories and labeled under the AutoSort/ namespace. The largest category is &quot;&#x27; + topCat[0] +
+    &#x27;&quot; at &#x27; + pct_(topCat[1], stats.total) + &#x27;% of volume. By importance, &#x27; +
+    pct_(importance.High, stats.total) + &#x27;% is high priority, &#x27; +
+    pct_(importance.Medium, stats.total) + &#x27;% medium, and &#x27; +
+    pct_(importance.Low, stats.total) + &#x27;% low. Detailed breakdowns and recommendations follow.&#x27;);
+
+  // Category breakdown table
+  body.appendParagraph(&#x27;Category Breakdown&#x27;).setHeading(DocumentApp.ParagraphHeading.HEADING1);
+  const catRows = [[&#x27;Category&#x27;, &#x27;Count&#x27;, &#x27;Percentage&#x27;]];
+  sortedEntries_(stats.byCategory).forEach(([k, v]) =&gt; catRows.push([k, String(v), pct_(v, stats.total) + &#x27;%&#x27;]));
+  catRows.push([&#x27;Total&#x27;, String(stats.total), &#x27;100%&#x27;]);
+  styleTable_(body.appendTable(catRows));
+
+  // Importance distribution
+  body.appendParagraph(&#x27;Importance Distribution&#x27;).setHeading(DocumentApp.ParagraphHeading.HEADING1);
+  const impRows = [[&#x27;Importance&#x27;, &#x27;Count&#x27;, &#x27;Percentage&#x27;]];
+  [&#x27;High&#x27;, &#x27;Medium&#x27;, &#x27;Low&#x27;].forEach(k =&gt; impRows.push([k, String(importance[k]), pct_(importance[k], stats.total) + &#x27;%&#x27;]));
+  styleTable_(body.appendTable(impRows));
+
+  // Top senders
+  body.appendParagraph(&#x27;Top Senders&#x27;).setHeading(DocumentApp.ParagraphHeading.HEADING1);
+  const sndRows = [[&#x27;Sender&#x27;, &#x27;Emails&#x27;]];
+  sortedEntries_(senders).slice(0, 12).forEach(([k, v]) =&gt; sndRows.push([k, String(v)]));
+  styleTable_(body.appendTable(sndRows));
+
+  // Label system created
+  body.appendParagraph(&#x27;Label System Created&#x27;).setHeading(DocumentApp.ParagraphHeading.HEADING1);
+  body.appendParagraph(&#x27;The following label tree was created under the AutoSort parent:&#x27;);
+  CATEGORIES.forEach(cat =&gt; body.appendListItem(ORG.PARENT + &#x27;/&#x27; + cat).setGlyphType(DocumentApp.GlyphType.BULLET));
+
+  // Recommendations
+  body.appendParagraph(&#x27;Actionable Recommendations&#x27;).setHeading(DocumentApp.ParagraphHeading.HEADING1);
+  recs.forEach(r =&gt; body.appendListItem(r).setGlyphType(DocumentApp.GlyphType.NUMBER));
+
+  doc.saveAndClose();
+  return DriveApp.getFileById(doc.getId());   // wrap as a Drive file
+}
+
+function styleTable_(table) {
+  // Bold the header row.
+  const header = table.getRow(0);
+  for (let i = 0; i &lt; header.getNumCells(); i++) {
+    header.getCell(i).editAsText().setBold(true);
+  }
+}
+
+// ---- Export a Google Doc as .docx into Drive (Word format, downloadable) ----
+function exportAsDocx_(docId, name) {
+  const url = &#x27;https://www.googleapis.com/drive/v3/files/&#x27; + docId +
+              &#x27;/export?mimeType=&#x27; +
+              encodeURIComponent(&#x27;application/vnd.openxmlformats-officedocument.wordprocessingml.document&#x27;);
+  const resp = UrlFetchApp.fetch(url, {
+    headers: { Authorization: &#x27;Bearer &#x27; + ScriptApp.getOAuthToken() },
+    muteHttpExceptions: true,
+  });
+  const blob = resp.getBlob().setName(name + &#x27;.docx&#x27;);
+  return DriveApp.createFile(blob);   // saved to your Drive root
+}
+
+// ---- Gmail summary draft (HTML body + .docx attachment) ----
+function createSummaryDraft_(stats, importance, senders, recs, scanned, docxFile) {
+  const to = ORG.REPORT_TO || Session.getActiveUser().getEmail();
+  const subject = &#x27;AutoSort Inbox Report — &#x27; + stats.total + &#x27; emails (&#x27; +
+                  Utilities.formatDate(new Date(), Session.getScriptTimeZone(), &#x27;MMM d&#x27;) + &#x27;)&#x27;;
+
+  let html = &#x27;&lt;div style=&quot;font-family:Arial,Helvetica,sans-serif;max-width:640px;color:#222&quot;&gt;&#x27;;
+  html += &#x27;&lt;h2 style=&quot;margin:0 0 4px&quot;&gt;AutoSort Inbox Report&lt;/h2&gt;&#x27;;
+  html += &#x27;&lt;p style=&quot;color:#555;margin:0 0 16px&quot;&gt;Automated scan of &lt;b&gt;&#x27; + scanned +
+          &#x27;&lt;/b&gt; threads (&#x27; + stats.unread + &#x27; unread). Full report attached as a Word document.&lt;/p&gt;&#x27;;
+
+  html += &#x27;&lt;h3 style=&quot;margin:18px 0 6px&quot;&gt;Category breakdown&lt;/h3&gt;&#x27;;
+  html += &#x27;&lt;table style=&quot;border-collapse:collapse;width:100%;font-size:14px&quot;&gt;&#x27; +
+          &#x27;&lt;tr style=&quot;background:#f2f4f7&quot;&gt;&lt;th style=&quot;text-align:left;padding:6px&quot;&gt;Category&lt;/th&gt;&#x27; +
+          &#x27;&lt;th style=&quot;text-align:right;padding:6px&quot;&gt;Count&lt;/th&gt;&lt;th style=&quot;text-align:right;padding:6px&quot;&gt;%&lt;/th&gt;&lt;/tr&gt;&#x27;;
+  sortedEntries_(stats.byCategory).forEach(([k, v]) =&gt;
+    html += &#x27;&lt;tr style=&quot;border-top:1px solid #eee&quot;&gt;&lt;td style=&quot;padding:6px&quot;&gt;&#x27; + esc_(k) +
+            &#x27;&lt;/td&gt;&lt;td style=&quot;padding:6px;text-align:right&quot;&gt;&#x27; + v +
+            &#x27;&lt;/td&gt;&lt;td style=&quot;padding:6px;text-align:right&quot;&gt;&#x27; + pct_(v, stats.total) + &#x27;%&lt;/td&gt;&lt;/tr&gt;&#x27;);
+  html += &#x27;&lt;/table&gt;&#x27;;
+
+  html += &#x27;&lt;h3 style=&quot;margin:18px 0 6px&quot;&gt;Importance&lt;/h3&gt;&lt;p style=&quot;font-size:14px&quot;&gt;&#x27; +
+          &#x27;High &#x27; + pct_(importance.High, stats.total) + &#x27;% · Medium &#x27; + pct_(importance.Medium, stats.total) +
+          &#x27;% · Low &#x27; + pct_(importance.Low, stats.total) + &#x27;%&lt;/p&gt;&#x27;;
+
+  html += &#x27;&lt;h3 style=&quot;margin:18px 0 6px&quot;&gt;Top senders&lt;/h3&gt;&lt;ul style=&quot;font-size:14px&quot;&gt;&#x27;;
+  sortedEntries_(senders).slice(0, 6).forEach(([k, v]) =&gt; html += &#x27;&lt;li&gt;&#x27; + esc_(k) + &#x27; — &#x27; + v + &#x27;&lt;/li&gt;&#x27;);
+  html += &#x27;&lt;/ul&gt;&#x27;;
+
+  html += &#x27;&lt;h3 style=&quot;margin:18px 0 6px&quot;&gt;Recommendations&lt;/h3&gt;&lt;ol style=&quot;font-size:14px&quot;&gt;&#x27;;
+  recs.forEach(r =&gt; html += &#x27;&lt;li style=&quot;margin-bottom:4px&quot;&gt;&#x27; + esc_(r) + &#x27;&lt;/li&gt;&#x27;);
+  html += &#x27;&lt;/ol&gt;&#x27;;
+
+  html += &#x27;&lt;p style=&quot;color:#888;font-size:12px;margin-top:22px&quot;&gt;Generated by InboxOrganizer.gs · &#x27; +
+          new Date().toLocaleString() + &#x27;&lt;/p&gt;&lt;/div&gt;&#x27;;
+
+  return GmailApp.createDraft(to, subject, &#x27;See the HTML report (attachment included).&#x27;, {
+    htmlBody: html,
+    attachments: [docxFile.getBlob()],
+  });
+}
+</code></pre><a class="openfull" href="assets/deliverables/InboxOrganizer.gs" target="_blank" rel="noopener noreferrer">Open raw ↗</a></div></details><details><summary>GenerateTestEmails.gs</summary><div class="doc-body"><p class="doc-meta">Google Apps Script · 408 lines · read on-page</p><pre class="doc-code"><code>/**
+ * GenerateTestEmails.gs
+ * --------------------------------------------------------------------------
+ * Generates a large volume of realistic-but-fake test emails and INSERTS them
+ * directly into a Gmail inbox with BACKDATED timestamps spread over time.
+ *
+ * Why &quot;insert&quot; instead of &quot;send&quot;?
+ *   Gmail.Users.Messages.insert() lets us place a message in the mailbox with
+ *   any Date: header we want, so emails appear spread across days/weeks
+ *   instead of all arriving &quot;now&quot;. (GmailApp.sendEmail cannot backdate.)
+ *
+ * SETUP (one time):
+ *   1. Open https://script.google.com and create a new project.
+ *   2. Paste this whole file in (replace the default Code.gs contents).
+ *   3. Enable the Gmail advanced service:
+ *        Editor left panel -&gt; Services (+) -&gt; &quot;Gmail API&quot; -&gt; Add.
+ *      (This turns on the `Gmail.*` advanced service used below.)
+ *   4. Set TEST_EMAIL below to your test inbox address.
+ *   5. Run `generateTestEmails`. Approve the OAuth scopes when prompted.
+ *
+ * NOTE: Do NOT run yet if you only wanted the code generated. Review first.
+ * --------------------------------------------------------------------------
+ */
+
+// ===========================================================================
+// CONFIG
+// ===========================================================================
+const CONFIG = {
+  // The inbox that will receive the inserted test messages.
+  // IMPORTANT: set this to your own test address.
+  TEST_EMAIL: &#x27;your-test-address@example.com&#x27;,
+
+  // Total number of emails to generate (&gt;= 100 as requested).
+  TOTAL_EMAILS: 120,
+
+  // Spread timestamps across the last N days.
+  SPREAD_DAYS: 30,
+
+  // Mark roughly this fraction of inserted mail as UNREAD (rest read).
+  UNREAD_FRACTION: 0.6,
+
+  // Add a header tag so you can find/delete every test message later with the
+  // Gmail search:  X-Test-Batch  (or just search subject text).
+  TEST_TAG_HEADER: &#x27;X-Test-Batch&#x27;,
+  TEST_TAG_VALUE: &#x27;inbox-management-demo&#x27;,
+
+  // Insert in small chunks with a short pause to stay under quotas.
+  CHUNK_SIZE: 25,
+  CHUNK_PAUSE_MS: 1500,
+};
+
+// ===========================================================================
+// SENDER / CONTENT POOLS  (realistic but FAKE)
+// ===========================================================================
+
+// Each category carries its own pool of fake senders + subject templates.
+// {tokens} in subjects are filled from the TOKENS table below.
+const CATEGORIES = {
+  Newsletter: {
+    weight: 18,
+    senders: [
+      { name: &#x27;The Morning Brew&#x27;,        email: &#x27;daily@morningbrew-mail.com&#x27; },
+      { name: &#x27;Stratechery Weekly&#x27;,      email: &#x27;updates@stratechery-digest.com&#x27; },
+      { name: &#x27;TLDR Tech&#x27;,               email: &#x27;news@tldr-techmail.com&#x27; },
+      { name: &#x27;The Hustle&#x27;,              email: &#x27;hello@thehustle-news.co&#x27; },
+      { name: &#x27;Product Hunt Daily&#x27;,      email: &#x27;digest@ph-dailymail.com&#x27; },
+    ],
+    subjects: [
+      &#x27;☕ Your {weekday} briefing: {topic} is heating up&#x27;,
+      &#x27;This week in {topic}: 5 things you missed&#x27;,
+      &#x27;The {number}-minute read on {topic}&#x27;,
+      &#x27;{topic}, explained — plus what to watch next week&#x27;,
+      &#x27;Issue #{issue}: {topic} and the road ahead&#x27;,
+    ],
+  },
+
+  Receipt: {
+    weight: 14,
+    senders: [
+      { name: &#x27;Amazon.com&#x27;,              email: &#x27;auto-confirm@amazon-orders.com&#x27; },
+      { name: &#x27;Uber Receipts&#x27;,           email: &#x27;receipts@uber-mail.com&#x27; },
+      { name: &#x27;Spotify&#x27;,                 email: &#x27;no-reply@spotify-billing.com&#x27; },
+      { name: &#x27;Apple&#x27;,                   email: &#x27;no_reply@apple-receipts.com&#x27; },
+      { name: &#x27;DoorDash&#x27;,                email: &#x27;orders@doordash-mail.com&#x27; },
+    ],
+    subjects: [
+      &#x27;Your receipt from {merchant} — ${amount}&#x27;,
+      &#x27;Order #{order} confirmed&#x27;,
+      &#x27;Payment received: ${amount}&#x27;,
+      &#x27;Your {merchant} order is on the way&#x27;,
+      &#x27;Thanks for your purchase (${amount})&#x27;,
+    ],
+  },
+
+  JobAlert: {
+    weight: 12,
+    senders: [
+      { name: &#x27;LinkedIn Job Alerts&#x27;,     email: &#x27;jobalerts-noreply@linkedin-mail.com&#x27; },
+      { name: &#x27;Indeed&#x27;,                  email: &#x27;alert@indeed-jobmail.com&#x27; },
+      { name: &#x27;Glassdoor Jobs&#x27;,          email: &#x27;jobs@glassdoor-alerts.com&#x27; },
+      { name: &#x27;Wellfound&#x27;,               email: &#x27;talent@wellfound-mail.com&#x27; },
+      { name: &#x27;Hired&#x27;,                   email: &#x27;matches@hired-mail.com&#x27; },
+    ],
+    subjects: [
+      &#x27;{number} new {role} jobs match your profile&#x27;,
+      &#x27;{company} is hiring a {role}&#x27;,
+      &#x27;New {role} roles in {city}&#x27;,
+      &#x27;Your job alert: {role} — {number} openings&#x27;,
+      &#x27;{role} at {company} and {number} more&#x27;,
+    ],
+  },
+
+  Spam: {
+    weight: 14,
+    senders: [
+      { name: &#x27;PRIZE NOTIFICATION&#x27;,      email: &#x27;winner@claim-rewards-now.biz&#x27; },
+      { name: &#x27;Account Security&#x27;,        email: &#x27;support@secure-verify-account.info&#x27; },
+      { name: &#x27;Crypto Insider&#x27;,          email: &#x27;tips@crypto-moon-alerts.net&#x27; },
+      { name: &#x27;Dr. Health&#x27;,              email: &#x27;offers@miracle-wellness-deal.biz&#x27; },
+      { name: &#x27;Lottery Board&#x27;,           email: &#x27;noreply@intl-lotto-claims.org&#x27; },
+    ],
+    subjects: [
+      &#x27;CONGRATULATIONS!!! You have won ${amount}&#x27;,
+      &#x27;URGENT: Your account will be suspended&#x27;,
+      &#x27;Re: Re: your unclaimed funds&#x27;,
+      &#x27;You won\&#x27;t believe this {topic} trick&#x27;,
+      &#x27;Final notice — verify within 24 hours&#x27;,
+    ],
+  },
+
+  MeetingInvite: {
+    weight: 12,
+    senders: [
+      { name: &#x27;Sarah Chen&#x27;,              email: &#x27;sarah.chen@northgate-systems.com&#x27; },
+      { name: &#x27;Marcus Webb&#x27;,             email: &#x27;m.webb@brightpath-labs.com&#x27; },
+      { name: &#x27;Calendar&#x27;,                email: &#x27;invites@meet-scheduler.com&#x27; },
+      { name: &#x27;Priya Nair&#x27;,              email: &#x27;priya.nair@helix-partners.com&#x27; },
+      { name: &#x27;Tom Alvarez&#x27;,             email: &#x27;tom.alvarez@cedarworks.io&#x27; },
+    ],
+    subjects: [
+      &#x27;Invitation: {meeting} @ {weekday} {time}&#x27;,
+      &#x27;Meeting invite: {meeting}&#x27;,
+      &#x27;Updated invitation: {meeting} ({weekday})&#x27;,
+      &#x27;Can you make {meeting} on {weekday}?&#x27;,
+      &#x27;{meeting} — please accept&#x27;,
+    ],
+  },
+
+  ClientFollowUp: {
+    weight: 12,
+    senders: [
+      { name: &#x27;Daniel Brooks&#x27;,           email: &#x27;daniel.brooks@meridian-retail.com&#x27; },
+      { name: &#x27;Aisha Rahman&#x27;,            email: &#x27;a.rahman@quartz-capital.com&#x27; },
+      { name: &#x27;Greg Sullivan&#x27;,           email: &#x27;greg@summit-logistics.com&#x27; },
+      { name: &#x27;Elena Petrova&#x27;,           email: &#x27;elena.petrova@vantage-media.com&#x27; },
+      { name: &#x27;James Okafor&#x27;,            email: &#x27;james.okafor@harbor-consulting.com&#x27; },
+    ],
+    subjects: [
+      &#x27;Following up on {topic}&#x27;,
+      &#x27;Re: {topic} — any update?&#x27;,
+      &#x27;Quick question about the {topic} proposal&#x27;,
+      &#x27;Checking in: {topic}&#x27;,
+      &#x27;Next steps on {topic}&#x27;,
+    ],
+  },
+
+  Promotional: {
+    weight: 16,
+    senders: [
+      { name: &#x27;Nike&#x27;,                    email: &#x27;news@nike-promos.com&#x27; },
+      { name: &#x27;Best Buy Deals&#x27;,          email: &#x27;deals@bestbuy-offers.com&#x27; },
+      { name: &#x27;Airbnb&#x27;,                  email: &#x27;hello@airbnb-travel-mail.com&#x27; },
+      { name: &#x27;Sephora&#x27;,                 email: &#x27;beauty@sephora-offers.com&#x27; },
+      { name: &#x27;Booking.com&#x27;,             email: &#x27;promos@booking-deals-mail.com&#x27; },
+    ],
+    subjects: [
+      &#x27;🔥 {percent}% off everything — today only&#x27;,
+      &#x27;Your exclusive {percent}% off code inside&#x27;,
+      &#x27;Last chance: {percent}% off ends tonight&#x27;,
+      &#x27;New arrivals + free shipping&#x27;,
+      &#x27;We miss you — here\&#x27;s {percent}% off&#x27;,
+    ],
+  },
+};
+
+// Token pools used to fill {placeholders} in subject lines.
+const TOKENS = {
+  weekday:  [&#x27;Monday&#x27;, &#x27;Tuesday&#x27;, &#x27;Wednesday&#x27;, &#x27;Thursday&#x27;, &#x27;Friday&#x27;],
+  topic:    [&#x27;AI&#x27;, &#x27;remote work&#x27;, &#x27;fintech&#x27;, &#x27;climate tech&#x27;, &#x27;marketing&#x27;, &#x27;the housing market&#x27;, &#x27;open source&#x27;, &#x27;productivity&#x27;],
+  number:   [&#x27;3&#x27;, &#x27;5&#x27;, &#x27;7&#x27;, &#x27;9&#x27;, &#x27;12&#x27;, &#x27;15&#x27;],
+  issue:    [&#x27;142&#x27;, &#x27;187&#x27;, &#x27;203&#x27;, &#x27;256&#x27;, &#x27;311&#x27;],
+  merchant: [&#x27;Amazon&#x27;, &#x27;Uber&#x27;, &#x27;Spotify&#x27;, &#x27;Apple&#x27;, &#x27;DoorDash&#x27;, &#x27;Target&#x27;],
+  amount:   [&#x27;12.99&#x27;, &#x27;4.50&#x27;, &#x27;87.20&#x27;, &#x27;199.00&#x27;, &#x27;23.45&#x27;, &#x27;9.99&#x27;, &#x27;1,000,000&#x27;, &#x27;540.00&#x27;],
+  order:    [&#x27;114-7783920&#x27;, &#x27;992-1043887&#x27;, &#x27;305-7741200&#x27;, &#x27;778-2290114&#x27;],
+  role:     [&#x27;Product Manager&#x27;, &#x27;Software Engineer&#x27;, &#x27;Data Analyst&#x27;, &#x27;UX Designer&#x27;, &#x27;Account Executive&#x27;, &#x27;Marketing Lead&#x27;],
+  company:  [&#x27;Northgate Systems&#x27;, &#x27;BrightPath Labs&#x27;, &#x27;Helix Partners&#x27;, &#x27;Cedarworks&#x27;, &#x27;Vantage Media&#x27;],
+  city:     [&#x27;Austin&#x27;, &#x27;Remote&#x27;, &#x27;New York&#x27;, &#x27;Seattle&#x27;, &#x27;Chicago&#x27;],
+  meeting:  [&#x27;Q3 Planning Sync&#x27;, &#x27;Design Review&#x27;, &#x27;1:1 Check-in&#x27;, &#x27;Vendor Demo&#x27;, &#x27;Sprint Retro&#x27;, &#x27;Budget Review&#x27;],
+  time:     [&#x27;9:00 AM&#x27;, &#x27;11:30 AM&#x27;, &#x27;2:00 PM&#x27;, &#x27;3:30 PM&#x27;, &#x27;4:15 PM&#x27;],
+  percent:  [&#x27;10&#x27;, &#x27;15&#x27;, &#x27;20&#x27;, &#x27;25&#x27;, &#x27;40&#x27;, &#x27;50&#x27;, &#x27;70&#x27;],
+};
+
+// ===========================================================================
+// MAIN
+// ===========================================================================
+function generateTestEmails() {
+  if (CONFIG.TEST_EMAIL === &#x27;your-test-address@example.com&#x27;) {
+    throw new Error(&#x27;Set CONFIG.TEST_EMAIL to your test inbox before running.&#x27;);
+  }
+
+  const plan = buildPlan_(CONFIG.TOTAL_EMAILS);   // [{category, ...}] with weighted mix
+  Logger.log(&#x27;Planned %s emails across %s categories.&#x27;, plan.length, Object.keys(CATEGORIES).length);
+
+  let inserted = 0;
+  for (let i = 0; i &lt; plan.length; i++) {
+    const item = plan[i];
+    try {
+      insertMessage_(item);
+      inserted++;
+    } catch (err) {
+      Logger.log(&#x27;Insert failed (%s): %s&#x27;, item.category, err.message);
+    }
+
+    // Throttle in chunks to respect quotas.
+    if ((i + 1) % CONFIG.CHUNK_SIZE === 0) {
+      Logger.log(&#x27;Inserted %s / %s ...&#x27;, inserted, plan.length);
+      Utilities.sleep(CONFIG.CHUNK_PAUSE_MS);
+    }
+  }
+
+  Logger.log(&#x27;DONE. Inserted %s of %s test emails into %s.&#x27;, inserted, plan.length, CONFIG.TEST_EMAIL);
+  Logger.log(&#x27;To remove them later, search Gmail for: subject contains a test phrase, or use cleanupTestEmails().&#x27;);
+}
+
+/**
+ * Optional cleanup helper: trashes everything carrying the test batch label.
+ * We tag inserted mail with a custom Gmail label so it is easy to bulk-remove.
+ */
+function cleanupTestEmails() {
+  const label = GmailApp.getUserLabelByName(CONFIG.TEST_TAG_VALUE);
+  if (!label) { Logger.log(&#x27;No test label found — nothing to clean.&#x27;); return; }
+  let threads, total = 0;
+  do {
+    threads = label.getThreads(0, 100);
+    threads.forEach(t =&gt; { t.moveToTrash(); total++; });
+  } while (threads.length &gt; 0);
+  Logger.log(&#x27;Trashed %s test threads.&#x27;, total);
+}
+
+// ===========================================================================
+// PLAN BUILDER  (weighted category mix + spread timestamps)
+// ===========================================================================
+function buildPlan_(total) {
+  const names = Object.keys(CATEGORIES);
+  const weighted = [];
+  names.forEach(n =&gt; { for (let i = 0; i &lt; CATEGORIES[n].weight; i++) weighted.push(n); });
+
+  const plan = [];
+  const now = Date.now();
+  const spreadMs = CONFIG.SPREAD_DAYS * 24 * 60 * 60 * 1000;
+
+  for (let i = 0; i &lt; total; i++) {
+    const category = weighted[Math.floor(Math.random() * weighted.length)];
+
+    // Random point in the window, then nudge to realistic-ish business hours.
+    let ts = now - Math.floor(Math.random() * spreadMs);
+    ts = nudgeToBusinessHours_(ts);
+
+    plan.push({ category, date: new Date(ts) });
+  }
+
+  // Sort oldest -&gt; newest so the inbox reads naturally.
+  plan.sort((a, b) =&gt; a.date - b.date);
+  return plan;
+}
+
+// Pull a timestamp toward 7am–7pm so mail doesn&#x27;t all land at 3am.
+function nudgeToBusinessHours_(ts) {
+  const d = new Date(ts);
+  const h = d.getHours();
+  if (h &lt; 7)  d.setHours(7 + Math.floor(Math.random() * 12));
+  if (h &gt; 19) d.setHours(8 + Math.floor(Math.random() * 11));
+  d.setMinutes(Math.floor(Math.random() * 60));
+  d.setSeconds(Math.floor(Math.random() * 60));
+  return d.getTime();
+}
+
+// ===========================================================================
+// MESSAGE BUILDER + INSERT
+// ===========================================================================
+function insertMessage_(item) {
+  const cat = CATEGORIES[item.category];
+  const sender = pick_(cat.senders);
+  const subject = fill_(pick_(cat.subjects));
+  const body = buildBody_(item.category, sender, subject);
+
+  const raw = buildRawMime_({
+    fromName: sender.name,
+    fromEmail: sender.email,
+    toEmail: CONFIG.TEST_EMAIL,
+    subject: subject,
+    date: item.date,
+    bodyText: body,
+    extraHeaders: {
+      [CONFIG.TEST_TAG_HEADER]: CONFIG.TEST_TAG_VALUE,
+      &#x27;X-Test-Category&#x27;: item.category,
+    },
+  });
+
+  const labelIds = [&#x27;INBOX&#x27;];
+  if (Math.random() &lt; CONFIG.UNREAD_FRACTION) labelIds.push(&#x27;UNREAD&#x27;);
+
+  // internalDateSource: &#x27;dateHeader&#x27; tells Gmail to use our backdated Date:.
+  Gmail.Users.Messages.insert(
+    { labelIds: labelIds },
+    &#x27;me&#x27;,
+    Utilities.newBlob(raw, &#x27;message/rfc822&#x27;),
+    { internalDateSource: &#x27;dateHeader&#x27; }
+  );
+
+  // Apply a findable user label for easy cleanup.
+  // (Inserted via Gmail API as raw; tag the thread through GmailApp afterward
+  //  would require a search — instead we rely on cleanupTestEmails which
+  //  searches the custom header label created on demand below.)
+  ensureTestLabel_();
+}
+
+// Create the cleanup label once (idempotent).
+function ensureTestLabel_() {
+  if (!ensureTestLabel_._done) {
+    if (!GmailApp.getUserLabelByName(CONFIG.TEST_TAG_VALUE)) {
+      GmailApp.createLabel(CONFIG.TEST_TAG_VALUE);
+    }
+    ensureTestLabel_._done = true;
+  }
+}
+
+/**
+ * Build a minimal RFC 2822 message as a RAW string.
+ * NOTE: do NOT base64-encode here. When we hand this to the Gmail API as a
+ * blob (media upload), it must be the raw RFC822 text — Gmail encodes it.
+ * Double-encoding is what caused &quot;unknown sender&quot; + empty body.
+ */
+function buildRawMime_(o) {
+  const headers = [
+    &#x27;From: &#x27; + formatFrom_(o.fromName, o.fromEmail),
+    &#x27;To: &#x27; + o.toEmail,
+    &#x27;Subject: &#x27; + encodeSubject_(o.subject),
+    &#x27;Date: &#x27; + Utilities.formatDate(o.date, Session.getScriptTimeZone(), &quot;EEE, dd MMM yyyy HH:mm:ss Z&quot;),
+    &#x27;MIME-Version: 1.0&#x27;,
+    &#x27;Content-Type: text/plain; charset=&quot;UTF-8&quot;&#x27;,
+    &#x27;Content-Transfer-Encoding: 7bit&#x27;,
+  ];
+  for (const k in (o.extraHeaders || {})) headers.push(k + &#x27;: &#x27; + o.extraHeaders[k]);
+
+  return headers.join(&#x27;\r\n&#x27;) + &#x27;\r\n\r\n&#x27; + o.bodyText;
+}
+
+// ===========================================================================
+// BODY + HELPERS
+// ===========================================================================
+function buildBody_(category, sender, subject) {
+  const intro = {
+    Newsletter:    &#x27;Here is your latest issue. Top stories, links, and a quick take below.&#x27;,
+    Receipt:       &#x27;Thanks for your order. This email confirms your recent transaction.&#x27;,
+    JobAlert:      &#x27;New roles matching your saved search are listed below.&#x27;,
+    Spam:          &#x27;You have been specially selected! Act now to claim your reward.&#x27;,
+    MeetingInvite: &#x27;You are invited to the following meeting. Please accept or decline.&#x27;,
+    ClientFollowUp:&#x27;Hi — just circling back on the item below when you have a moment.&#x27;,
+    Promotional:   &#x27;A limited-time offer just for you. Shop now before it ends.&#x27;,
+  }[category] || &#x27;Hello,&#x27;;
+
+  return [
+    intro,
+    &#x27;&#x27;,
+    &#x27;RE: &#x27; + subject,
+    &#x27;&#x27;,
+    &#x27;This is an automatically generated TEST email used to populate an inbox&#x27;,
+    &#x27;for sorting, labeling, and reporting demos. It was not sent by a real&#x27;,
+    &#x27;person or company. Sender shown: &#x27; + sender.name + &#x27; &lt;&#x27; + sender.email + &#x27;&gt;.&#x27;,
+    &#x27;&#x27;,
+    &#x27;Category: &#x27; + category,
+    &#x27;Reference: &#x27; + Math.random().toString(36).slice(2, 10).toUpperCase(),
+    &#x27;&#x27;,
+    &#x27;— Test data generator&#x27;,
+  ].join(&#x27;\r\n&#x27;);
+}
+
+function pick_(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function fill_(template) {
+  return template.replace(/\{(\w+)\}/g, (m, key) =&gt;
+    TOKENS[key] ? pick_(TOKENS[key]) : m);
+}
+
+function formatFrom_(name, email) {
+  // Quote display names that contain special chars.
+  const safe = /[&quot;,&lt;&gt;]/.test(name) ? &#x27;&quot;&#x27; + name.replace(/&quot;/g, &#x27;\\&quot;&#x27;) + &#x27;&quot;&#x27; : name;
+  return safe + &#x27; &lt;&#x27; + email + &#x27;&gt;&#x27;;
+}
+
+// RFC 2047 encode subjects that contain non-ASCII (e.g. emoji).
+function encodeSubject_(s) {
+  if (/^[\x00-\x7F]*$/.test(s)) return s;
+  const b64 = Utilities.base64Encode(Utilities.newBlob(s).getBytes());
+  return &#x27;=?UTF-8?B?&#x27; + b64 + &#x27;?=&#x27;;
+}
+</code></pre><a class="openfull" href="assets/deliverables/GenerateTestEmails.gs" target="_blank" rel="noopener noreferrer">Open raw ↗</a></div></details></div>
         </div>
         <div class="art-figs gallery">
           <figure class="plate"><picture><source type="image/avif" srcset="assets/cowork/inbox-appscript.avif"><source type="image/webp" srcset="assets/cowork/inbox-appscript.webp"><img src="assets/cowork/inbox-appscript.jpg" alt="The inbox organizer Apps Script in the editor" width="1669" height="884" decoding="async" loading="lazy"></picture><figcaption><b>FIG.1.9</b> Apps Script source</figcaption></figure>
