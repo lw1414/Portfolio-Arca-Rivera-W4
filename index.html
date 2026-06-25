@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aernest Lean Rivera — Field Notes in Automation (The Press Edition)</title>
+<meta name="description" content="A printed-press portfolio of AI builds by Aernest Lean Rivera — twenty projects across three tools: Claude Cowork, Codex, and Claude Code." />
+<meta name="theme-color" content="#ECE6D6" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#ECE6D6; --paper-2:#E4DCC8; --panel:#F4EFE2;
+    --ink:#16140F; --ink-soft:#3a352b;
+    --blue:#233CA6; --blue-deep:#1a2c7e;
+    --red:#D63A24;
+    --muted:#6E6450;
+    --rule:rgba(22,20,15,.20);
+    --rule-strong:rgba(22,20,15,.5);
+    --maxw:1180px;
+    --pad:clamp(18px,5vw,56px);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Newsreader",Georgia,serif; font-size:18px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    background-image:
+      radial-gradient(rgba(22,20,15,.025) 1px, transparent 1px);
+    background-size:4px 4px;
+  }
+  a{color:inherit}
+  img,video{display:block;max-width:100%}
+  .mono{font-family:"Space Mono",ui-monospace,monospace}
+
+  /* ---- skip + crop marks (signature: press registration) ---- */
+  .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:200}
+  .skip:focus{left:8px;top:8px}
+  .crop{position:fixed;inset:0;pointer-events:none;z-index:90;mix-blend-mode:multiply}
+  .crop span{position:absolute;width:18px;height:18px}
+  .crop span::before,.crop span::after{content:"";position:absolute;background:var(--red)}
+  .crop span::before{width:100%;height:1.5px;top:0}
+  .crop span::after{height:100%;width:1.5px;left:0}
+  .crop .tl{top:12px;left:12px}
+  .crop .tr{top:12px;right:12px;transform:scaleX(-1)}
+  .crop .bl{bottom:12px;left:12px;transform:scaleY(-1)}
+  .crop .br{bottom:12px;right:12px;transform:scale(-1)}
+  @media(max-width:720px){.crop{display:none}}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+
+  /* ---- masthead nav ---- */
+  header.masthead{position:sticky;top:0;z-index:100;background:rgba(236,230,214,.93);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink)}
+  .mast-row{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:12px var(--pad)}
+  .mast-name{font-family:"Instrument Serif",serif;font-size:clamp(20px,2.4vw,28px);letter-spacing:.01em;text-decoration:none;white-space:nowrap}
+  .mast-name b{font-weight:400}
+  .mast-name .reg{color:#1f9d4d}
+  nav.links{display:flex;gap:22px;flex-wrap:wrap}
+  nav.links a{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);padding-bottom:2px;border-bottom:1.5px solid transparent;transition:border-color .2s,color .2s}
+  nav.links a:hover,nav.links a:focus-visible{color:var(--blue);border-color:var(--blue)}
+  .burger{display:none;border:1.5px solid var(--ink);background:none;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.12em;padding:7px 12px;cursor:pointer;text-transform:uppercase}
+  @media(max-width:860px){
+    nav.links{position:fixed;inset:54px 0 auto 0;background:var(--paper);flex-direction:column;gap:0;border-bottom:2px solid var(--ink);transform:translateY(-130%);transition:transform .32s ease;padding:6px var(--pad) 14px}
+    nav.links.open{transform:translateY(0)}
+    nav.links a{padding:12px 0;border-bottom:1px solid var(--rule)}
+    .burger{display:inline-block}
+  }
+
+  /* ---- generic section frame ---- */
+  section{padding-block:clamp(48px,7vw,96px)}
+  .kicker{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin:0 0 14px}
+  .eyebrow-red{color:var(--red)}
+  h1,h2,h3{font-family:"Instrument Serif",serif;font-weight:400;line-height:1.02;margin:0}
+  .halftone{height:14px;background:radial-gradient(var(--ink) 1.4px,transparent 1.6px);background-size:9px 9px;opacity:.5;margin:0}
+
+  /* ---- COVER / hero ---- */
+  .cover{padding-top:clamp(36px,5vw,64px)}
+  .cover .issue{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:8px 0;margin-bottom:clamp(20px,4vw,40px)}
+  .cover h1{font-size:clamp(48px,11vw,140px);letter-spacing:-.01em}
+  .cover h1 em{font-style:italic;color:var(--blue)}
+  .cover-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,56px);align-items:end;margin-top:clamp(24px,4vw,46px)}
+  .lead{font-size:clamp(18px,2vw,21px);max-width:52ch;color:var(--ink-soft);margin:0 0 26px}
+  .lead::first-letter{font-family:"Instrument Serif",serif;float:left;font-size:4.4em;line-height:.72;padding:6px 12px 0 0;color:var(--red)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:13px 20px;border:2px solid var(--ink);transition:transform .15s,background .2s,color .2s}
+  .btn.solid{background:var(--ink);color:var(--paper)}
+  .btn.solid:hover{background:var(--blue);border-color:var(--blue)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn:hover{transform:translateY(-2px)}
+  /* duotone cover plate */
+  .plate-duo{position:relative;border:2px solid var(--ink);background:var(--blue);overflow:hidden;aspect-ratio:4/5}
+  .plate-duo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04) brightness(1.12);mix-blend-mode:multiply}
+  .plate-duo::after{content:"";position:absolute;inset:0;background:var(--red);mix-blend-mode:screen;opacity:.16;pointer-events:none}
+  .plate-duo figcaption{position:absolute;left:0;bottom:0;right:0;z-index:2;background:var(--ink);color:var(--paper);font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;mix-blend-mode:normal}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin-top:clamp(34px,5vw,60px)}
+  .stat{padding:18px 16px;border-right:1px solid var(--rule)}
+  .stat:last-child{border-right:none}
+  .stat .n{font-family:"Instrument Serif",serif;font-size:clamp(32px,5vw,52px);line-height:1}
+  .stat .l{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+  @media(max-width:760px){.cover-grid{grid-template-columns:1fr}.plate-duo{aspect-ratio:16/11}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--rule)}}
+
+  /* ---- contents / TOC ---- */
+  .toc{background:var(--ink);color:var(--paper)}
+  .toc .wrap{padding-block:clamp(40px,6vw,72px)}
+  .toc .kicker{color:#cdd4f5}
+  .toc h2{color:var(--paper);font-size:clamp(28px,4vw,44px);margin-bottom:28px}
+  .toc-list{display:grid;gap:0;border-top:1px solid rgba(255,255,255,.25)}
+  .toc-item{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.18);text-decoration:none;color:var(--paper);transition:padding-left .2s,color .2s}
+  .toc-item:hover{padding-left:10px;color:#aeb9f7}
+  .toc-item .no{font-family:"Space Mono",monospace;font-size:13px;color:var(--red)}
+  .toc-item .tt{font-family:"Instrument Serif",serif;font-size:clamp(22px,3vw,32px)}
+  .toc-item .pg{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.12em;color:#9aa3c9}
+  .toc-item .dd{display:none}
+
+  /* ---- department header ---- */
+  .dept-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:3px double var(--ink);padding-bottom:14px;margin-bottom:clamp(30px,4vw,52px)}
+  .dept-head h2{font-size:clamp(36px,7vw,84px);letter-spacing:-.01em}
+  .dept-head .folio{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:right;white-space:nowrap}
+  .dept-dek{max-width:60ch;color:var(--ink-soft);font-size:clamp(17px,1.6vw,20px);margin:-26px 0 clamp(40px,5vw,64px)}
+
+  /* ---- article block ---- */
+  .article{display:grid;grid-template-columns:0.92fr 1.08fr;gap:clamp(22px,3.5vw,54px);padding-block:clamp(34px,4.5vw,58px);border-bottom:1px solid var(--rule);align-items:start}
+  .article.flip .art-text{order:2}
+  .article.flip .art-figs{order:1}
+  .art-kick{font-family:"Space Mono",monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin:0 0 12px}
+  .art-text h3{font-size:clamp(28px,3.6vw,46px);margin-bottom:14px}
+  .art-text p{margin:0 0 18px;color:var(--ink-soft)}
+  .bullets{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}
+  .bullets li{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:.03em;padding:10px 0 10px 22px;border-bottom:1px solid var(--rule);position:relative;color:var(--ink)}
+  .bullets li::before{content:"→";position:absolute;left:0;color:var(--red)}
+
+  /* figures / plates */
+  .art-figs{display:grid;gap:14px;align-items:start}
+  .art-figs.two{grid-template-columns:1fr 1fr}
+  .art-figs.lead-plus{grid-template-columns:1fr 1fr}
+  .art-figs.lead-plus .plate.span{grid-column:1 / -1}
+  figure.plate{margin:0;display:flex;flex-direction:column;border:1.5px solid var(--ink);background:var(--panel);box-shadow:6px 6px 0 rgba(22,20,15,.12);transition:transform .18s,box-shadow .18s}
+  figure.plate:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(35,60,166,.18)}
+  figure.plate img,figure.plate video{display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/10;background:#fff}
+  figure.plate.tall img{aspect-ratio:4/5}
+  figure.plate figcaption{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:8px 10px;border-top:1.5px solid var(--ink);display:flex;gap:8px}
+  figure.plate figcaption b{color:var(--red);font-weight:700}
+
+  /* stat / quote panel for text-only projects */
+  .panel{border:2px solid var(--ink);background:var(--blue);color:var(--paper);padding:clamp(22px,3vw,34px);align-self:stretch}
+  .panel .big{font-family:"Instrument Serif",serif;font-size:clamp(40px,6vw,72px);line-height:.95}
+  .panel .sub{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cdd4f5;margin-top:10px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .chip{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.06em;border:1px solid rgba(255,255,255,.5);padding:6px 10px;text-transform:uppercase}
+
+  @media(max-width:820px){
+    .article,.article.flip{grid-template-columns:1fr}
+    .article.flip .art-text{order:1}.article.flip .art-figs{order:2}
+    .dept-dek{margin-top:-14px}
+  }
+
+  /* ---- about ---- */
+  .about{background:var(--paper-2);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,60px)}
+  .about h2{font-size:clamp(32px,5vw,60px);margin-bottom:18px}
+  .about p{color:var(--ink-soft);max-width:54ch}
+  .col-h{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--rule);padding-bottom:8px;margin:26px 0 12px}
+  .skill-row{display:flex;flex-wrap:wrap;gap:8px}
+  .skill-row .chip{color:var(--ink);border-color:var(--rule-strong)}
+  .timeline{list-style:none;margin:0;padding:0}
+  .timeline li{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+  .timeline .yr{font-family:"Space Mono",monospace;font-size:12px;color:var(--muted);white-space:nowrap}
+  .timeline .role{font-family:"Instrument Serif",serif;font-size:21px}
+  .timeline .org{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr}}
+
+  /* ---- colophon ---- */
+  footer.colophon{background:var(--ink);color:var(--paper);padding-block:clamp(40px,6vw,72px)}
+  footer .top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:24px}
+  footer h2{color:var(--paper);font-size:clamp(28px,4vw,46px);max-width:16ch}
+  footer .gh{font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--paper);border:2px solid var(--paper);padding:13px 20px;transition:background .2s,color .2s}
+  footer .gh:hover{background:var(--red);border-color:var(--red)}
+  footer .fine{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:22px;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9aa3c9}
+
+  /* zoom / lightbox */
+  figure.plate img,figure.plate video,.plate-duo img{cursor:zoom-in}
+  #lightbox{position:fixed;inset:0;z-index:300;background:rgba(18,16,12,.94);display:none;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:clamp(20px,5vw,56px)}
+  #lightbox.open{display:flex}
+  #lightbox .lb-media{max-width:94vw;max-height:80vh;object-fit:contain;border:2px solid var(--paper);background:#fff;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  #lightbox .lb-cap{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);text-align:center}
+  #lightbox .lb-cap b{color:var(--red)}
+  #lightbox .lb-close{position:absolute;top:16px;right:20px;background:none;border:2px solid var(--paper);color:var(--paper);font-family:"Space Mono",monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;cursor:pointer}
+  #lightbox .lb-close:hover{background:var(--red);border-color:var(--red)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    figure.plate,.btn,.toc-item{transition:none}
+    *{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contents">Skip to contents</a>
+<div class="crop" aria-hidden="true"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
+
+<header class="masthead">
+  <div class="mast-row">
+    <a class="mast-name" href="#top"><b>Aernest&nbsp;Lean&nbsp;Rivera</b> <span class="reg">●</span></a>
+    <button class="burger" aria-expanded="false" aria-controls="nav">Index ▾</button>
+    <nav class="links" id="nav" aria-label="Sections">
+      <a href="#contents">Contents</a>
+      <a href="#dept-cowork">Cowork</a>
+      <a href="#dept-codex">Codex</a>
+      <a href="#dept-claudecode">Claude&nbsp;Code</a>
+      <a href="#about">About</a>
+      <a href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer">Résumé&nbsp;↗</a>
+      <a href="#colophon">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== COVER ===== -->
+  <section class="cover" aria-label="Cover">
+    <div class="wrap">
+      <div class="issue reveal">
+        <span>Issue Nº 4 — The Press Edition</span>
+        <span>Field Notes in Automation</span>
+        <span>Bulacan, PH · 2026</span>
+      </div>
+      <h1 class="reveal">Twenty builds,<br>three tools,<br>one <em>builder</em>.</h1>
+      <div class="cover-grid">
+        <div class="reveal">
+          <p class="lead">Aernest Lean Rivera is an AI Product Builder and licensed electronics engineer who turns repetitive work into systems that run themselves. This edition collects a month of shipped work — agents, automations, security audits, and storefronts — set in type and grouped by the tool that built each one: Claude&nbsp;Cowork, Codex, and Claude&nbsp;Code.</p>
+          <div class="cta-row">
+            <a class="btn solid" href="#contents">Read the issue ↓</a>
+            <a class="btn ghost" href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+            <a class="btn ghost" href="https://github.com/lw1414" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+        <figure class="plate-duo reveal">
+          <img src="assets/cowork/figma-hero.png" alt="Techno Hero storefront, the cover plate of this edition" loading="lazy" />
+          <figcaption>Plate I — Cover proof · design-to-code</figcaption>
+        </figure>
+      </div>
+      <div class="stats reveal" role="list">
+        <div class="stat" role="listitem"><div class="n">20+</div><div class="l">Builds shipped</div></div>
+        <div class="stat" role="listitem"><div class="n">3</div><div class="l">AI tools used</div></div>
+        <div class="stat" role="listitem"><div class="n">4+</div><div class="l">Yrs engineering</div></div>
+        <div class="stat" role="listitem"><div class="n">150+</div><div class="l">Devices shipped</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTENTS ===== -->
+  <section class="toc" id="contents" aria-label="Contents">
+    <div class="wrap">
+      <p class="kicker reveal">In this issue</p>
+      <h2 class="reveal">Contents</h2>
+      <div class="toc-list">
+        <a class="toc-item reveal" href="#dept-cowork"><span class="no">01</span><span class="tt">Claude Cowork — Departments of Design, Sales &amp; Brand</span><span class="pg">P. 01</span></a>
+        <a class="toc-item reveal" href="#dept-codex"><span class="no">02</span><span class="tt">Codex — Automation, Agents &amp; Generative Imagery</span><span class="pg">P. 02</span></a>
+        <a class="toc-item reveal" href="#dept-claudecode"><span class="no">03</span><span class="tt">Claude Code — Security, Tooling &amp; the Live Web</span><span class="pg">P. 03</span></a>
+        <a class="toc-item reveal" href="#about"><span class="no">—</span><span class="tt">About the Builder &amp; Colophon</span><span class="pg">P. 04</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPT 01 — COWORK ===== -->
+  <section id="dept-cowork" aria-label="Claude Cowork">
+    <div class="wrap">
+      <p class="kicker reveal">Department 01 · Built with</p>
+      <div class="dept-head reveal">
+        <h2>Claude&nbsp;Cowork</h2>
+        <div class="folio">Folio P. 01<br>Design · Sales · Brand</div>
+      </div>
+      <p class="dept-dek reveal">Collaborative, browser-native building — where a brief becomes a storefront, a sales motion, or a brand campaign in a single sitting.</p>
+
+      <!-- Figma + Claude -->
+      <article class="article reveal">
+        <div class="art-text">
+          <p class="art-kick">Cowork · Design-to-Code</p>
+          <h3>The Techno Hero Store</h3>
+          <p>A production-ready e-commerce storefront built 1:1 from a Figma design — a working cart, category filtering, and a checkout flow across twelve products in six categories, in a soft-modern dark-teal system.</p>
+          <ul class="bullets">
+            <li>Editable Figma file pushed back to the account</li>
+            <li>Product imagery served live from GitHub</li>
+            <li>Featured drop of 22 techwear items</li>
+          </ul>
+        </div>
+        <div class="art-figs lead-plus">
+          <figure class="plate span"><img src="assets/cowork/figma-editorial.png" alt="Editorial section of the Techno Hero storefront" loading="lazy" /><figcaption><b>FIG.1.1</b> Storefront — editorial spread</figcaption></figure>
+          <figure class="plate"><img src="assets/cowork/figma-buds.png" alt="AuraBuds Pro product render" loading="lazy" /><figcaption><b>FIG.1.2</b> Product plate</figcaption></figure>
+          <figure class="plate"><img src="assets/cowork/figma-watch.png" alt="Helix Watch 2 product render" loading="lazy" /><figcaption><b>FIG.1.3</b> Product plate</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- Sales suite -->
+      <article class="article flip reveal">
+        <div class="art-text">
+          <p class="art-kick">Cowork · Sales Operations</p>
+          <h3>The Sales Automation Suite</h3>
+          <p>A full account-executive simulation: a 72-event calendar, weekly briefings, pitch decks, ROI models, Apollo prospecting plans, and Gmail-ready follow-ups — five activities in one engine.</p>
+          <ul class="bullets">
+            <li>Two-week calendar build with pipeline analytics</li>
+            <li>Cold-email + LinkedIn outreach systems</li>
+            <li>Canva collateral and battle cards</li>
+          </ul>
+        </div>
+        <div class="art-figs two">
+          <figure class="plate"><img src="assets/cowork/sales-calendar.png" alt="Two-week sales calendar build" loading="lazy" /><figcaption><b>FIG.1.4</b> Calendar build</figcaption></figure>
+          <figure class="plate"><img src="assets/cowork/sales-gmail.png" alt="Gmail follow-up drafts proof" loading="lazy" /><figcaption><b>FIG.1.5</b> Draft follow-ups</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- TesterTech -->
+      <article class="article reveal">
+        <div class="art-text">
+          <p class="art-kick">Cowork · Motion &amp; Brand</p>
+          <h3>TesterTech Wear — Campaign</h3>
+          <p>A techwear brand campaign delivered as a full asset pack: TRON-style scan animations, idle loops, and promotional artwork tuned for social and marketing use.</p>
+          <ul class="bullets">
+            <li>Motion graphics — scan + idle loops</li>
+            <li>Campaign asset pack and brand guidelines</li>
+          </ul>
+        </div>
+        <div class="art-figs two">
+          <figure class="plate"><video src="assets/cowork/testertech-scan.mp4" autoplay muted loop playsinline preload="auto" aria-label="TesterTech TRON scan animation loop"></video><figcaption><b>FIG.1.6</b> TesterTech Wear — TRON scan</figcaption></figure>
+          <figure class="plate"><img src="assets/cowork/testertech-ad.png" alt="TesterTech promotional advertisement" loading="lazy" /><figcaption><b>FIG.1.7</b> Promo plate</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- text-only: PawPrint + Inbox -->
+      <article class="article reveal">
+        <div class="art-text">
+          <p class="art-kick">Cowork · Social Strategy</p>
+          <h3>PawPrint Tees</h3>
+          <p>A two-week social content engine for a custom dog-portrait t-shirt brand — calendar, brand cheat sheet, ten ready-to-post pieces, carousel ideas, and a posting SOP.</p>
+          <ul class="bullets">
+            <li>Five content pillars across IG, TikTok &amp; Facebook</li>
+            <li>Client pitch + standard operating procedure</li>
+          </ul>
+        </div>
+        <div class="art-figs">
+          <div class="panel">
+            <div class="big">14 posts</div>
+            <div class="sub">3 platforms · 2-week calendar</div>
+            <div class="chips"><span class="chip">Coral #FF6B6B</span><span class="chip">Navy #1E3A5F</span><span class="chip">Cream #FFF8F0</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="article flip reveal">
+        <div class="art-text">
+          <p class="art-kick">Cowork · Gmail Automation</p>
+          <h3>The AI Inbox Manager</h3>
+          <p>A Google Apps Script system that scans a Gmail inbox and sorts it into ten predefined categories with auto-applied labels — plus a read-only analysis mode that reports before it touches anything.</p>
+          <ul class="bullets">
+            <li>analyzeInbox · organizeInbox · resetAutoSort</li>
+            <li>Backdated test-email generator for safe runs</li>
+          </ul>
+        </div>
+        <div class="art-figs">
+          <div class="panel">
+            <div class="big">10 buckets</div>
+            <div class="sub">Auto-labels · read-only scan mode</div>
+            <div class="chips"><span class="chip">Clients</span><span class="chip">Receipts</span><span class="chip">Shipping</span><span class="chip">Newsletters</span><span class="chip">Spam</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="halftone" aria-hidden="true"></div>
+
+  <!-- ===== DEPT 02 — CODEX ===== -->
+  <section id="dept-codex" aria-label="Codex">
+    <div class="wrap">
+      <p class="kicker reveal">Department 02 · Built with</p>
+      <div class="dept-head reveal">
+        <h2>Codex</h2>
+        <div class="folio">Folio P. 02<br>Automation · Agents · Imagery</div>
+      </div>
+      <p class="dept-dek reveal">Where prompts compile into running systems — schedulers, multi-platform posting engines, custom skills, and generated imagery.</p>
+
+      <!-- Capstone -->
+      <article class="article reveal">
+        <div class="art-text">
+          <p class="art-kick">Codex · Multi-Platform Automation</p>
+          <h3>The Capstone Engine</h3>
+          <p>An autonomous social-posting engine for Reddit, X, and LinkedIn. It reads top posts, generates vibe-matched original drafts, analyzes business KOLs, and schedules campaigns — all approval-gated, all tracked in one dashboard.</p>
+          <ul class="bullets">
+            <li>22 startup/SaaS subreddits researched</li>
+            <li>Approval-gated publishing across 3 platforms</li>
+            <li>Follower campaign: 56 → 100</li>
+          </ul>
+        </div>
+        <div class="art-figs lead-plus">
+          <figure class="plate span"><img src="assets/codex/capstone-dashboard.png" alt="Capstone posting dashboard, all sections" loading="lazy" /><figcaption><b>FIG.2.1</b> Tracking dashboard</figcaption></figure>
+          <figure class="plate"><img src="assets/codex/capstone-linkedin-1.png" alt="LinkedIn PCB bringup campaign image" loading="lazy" /><figcaption><b>FIG.2.2</b> LinkedIn asset</figcaption></figure>
+          <figure class="plate"><img src="assets/codex/capstone-twitter.png" alt="Generated tweet, published" loading="lazy" /><figcaption><b>FIG.2.3</b> X / Twitter post</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- Image generation -->
+      <article class="article flip reveal">
+        <div class="art-text">
+          <p class="art-kick">Codex · Generative Imagery</p>
+          <h3>Image Generation</h3>
+          <p>Image creation and variation workflows — generating multiple takes, then steering tone and style across them, from a single browser session.</p>
+          <ul class="bullets">
+            <li>Multi-screen variation views</li>
+            <li>Warmer-tone restyling passes</li>
+          </ul>
+        </div>
+        <div class="art-figs two">
+          <figure class="plate"><img src="assets/codex/imagegen.png" alt="Image generation, all screens" loading="lazy" /><figcaption><b>FIG.2.4</b> Variation set</figcaption></figure>
+          <figure class="plate"><img src="assets/codex/w4d5-imagegen.jpg" alt="Two image versions side by side" loading="lazy" /><figcaption><b>FIG.2.5</b> Version A/B</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- Schedule + W4D5 -->
+      <article class="article reveal">
+        <div class="art-text">
+          <p class="art-kick">Codex · Scheduled Automation &amp; Custom Skills</p>
+          <h3>Schedule Your Skill &amp; Build a Skill</h3>
+          <p>Cron-driven Reddit fetchers writing to a SQLite store, a custom landing-page-generation skill, and automation runs — built and demonstrated live in the Codex window.</p>
+          <ul class="bullets">
+            <li>Hourly + daily-5PM fetch jobs → reddit_posts.db</li>
+            <li>Custom skill generating landing pages on demand</li>
+            <li>Auto-generated pages from live Reddit data</li>
+          </ul>
+        </div>
+        <div class="art-figs two">
+          <figure class="plate"><img src="assets/codex/w4d5-automation.jpg" alt="Fetch Reddit hourly automation configuration" loading="lazy" /><figcaption><b>FIG.2.6</b> Scheduled job</figcaption></figure>
+          <figure class="plate"><img src="assets/codex/w4d5-landing.jpg" alt="Landing page generated by the custom skill" loading="lazy" /><figcaption><b>FIG.2.7</b> Skill output</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="halftone" aria-hidden="true"></div>
+
+  <!-- ===== DEPT 03 — CLAUDE CODE ===== -->
+  <section id="dept-claudecode" aria-label="Claude Code">
+    <div class="wrap">
+      <p class="kicker reveal">Department 03 · Built with</p>
+      <div class="dept-head reveal">
+        <h2>Claude&nbsp;Code</h2>
+        <div class="folio">Folio P. 03<br>Security · Tooling · Web</div>
+      </div>
+      <p class="dept-dek reveal">The terminal-grade department — auditing real codebases, packaging plugins, and managing a live WordPress site through MCP.</p>
+
+      <!-- Security audit (text-only) -->
+      <article class="article reveal">
+        <div class="art-text">
+          <p class="art-kick">Claude Code · Security</p>
+          <h3>LeadBlaster Pro — Security Audit</h3>
+          <p>A full OWASP-style assessment and remediation of a deliberately insecure SaaS lead-gen platform built on Supabase. Findings were documented line-by-line, planned, fixed, and re-verified against a V2.</p>
+          <ul class="bullets">
+            <li>Hardcoded secrets &amp; missing Row-Level Security</li>
+            <li>Stored XSS, client-side authz, CSV injection</li>
+            <li>Before/after diff — every issue remediated</li>
+          </ul>
+        </div>
+        <div class="art-figs">
+          <div class="panel">
+            <div class="big">22 issues</div>
+            <div class="sub">7 critical · 6 high · 4 med · 5 low</div>
+            <div class="chips"><span class="chip">OWASP Top 10</span><span class="chip">Supabase RLS</span><span class="chip">All remediated</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Week 4 Day 2 plugin -->
+      <article class="article flip reveal">
+        <div class="art-text">
+          <p class="art-kick">Claude Code · Tooling</p>
+          <h3>The Freelancer-Toolkit Plugin</h3>
+          <p>A Claude Code plugin grown across three stages — from a basic skill-and-commands kit to an advanced build with a WordPress MCP server and subagents, then packaged and published to a GitHub marketplace.</p>
+          <ul class="bullets">
+            <li>1 skill · 4 commands · 3 agents · 2 hooks · 1 MCP</li>
+            <li>PostToolUse quality-check + changelog hooks</li>
+            <li>Validated and shipped to a marketplace</li>
+          </ul>
+        </div>
+        <div class="art-figs lead-plus">
+          <figure class="plate span"><img src="assets/claudecode/w4d2-advanced.png" alt="Advanced MCP, hooks and subagents deliverable" loading="lazy" /><figcaption><b>FIG.3.1</b> Advanced build</figcaption></figure>
+          <figure class="plate"><img src="assets/claudecode/w4d2-publish.png" alt="Package and publish step" loading="lazy" /><figcaption><b>FIG.3.2</b> Publish</figcaption></figure>
+          <figure class="plate"><img src="assets/claudecode/w4d2-plugins.png" alt="Installed plugins window" loading="lazy" /><figcaption><b>FIG.3.3</b> Installed</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- SEO / WordPress -->
+      <article class="article reveal">
+        <div class="art-text">
+          <p class="art-kick">Claude Code · SEO + CMS</p>
+          <h3>SEO &amp; WordPress, Live</h3>
+          <p>A live WordPress site audited and improved through the NovaMira MCP server — treated as a real client engagement, with draft-only safeguards, before/after homepage fixes, and AI-generated featured images.</p>
+          <ul class="bullets">
+            <li>Draft-only, ask-before-structural-change rules</li>
+            <li>Before/after homepage SEO proof</li>
+            <li>Three featured-image styles, one chosen</li>
+          </ul>
+        </div>
+        <div class="art-figs lead-plus">
+          <figure class="plate"><img src="assets/claudecode/seo-before.png" alt="Homepage before SEO fixes" loading="lazy" /><figcaption><b>FIG.3.4</b> Before</figcaption></figure>
+          <figure class="plate"><img src="assets/claudecode/seo-after.png" alt="Homepage after SEO fixes" loading="lazy" /><figcaption><b>FIG.3.5</b> After</figcaption></figure>
+          <figure class="plate span"><img src="assets/claudecode/seo-featured.png" alt="Chosen AI-generated featured image" loading="lazy" /><figcaption><b>FIG.3.6</b> Chosen featured image</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about" aria-label="About">
+    <div class="wrap">
+      <p class="kicker reveal">P. 04 · The byline</p>
+      <div class="about-grid">
+        <div class="reveal">
+          <h2>About the builder</h2>
+          <p>Aernest Lean Rivera is an AI Product Builder and licensed Electronics Engineer based in Bulacan, Philippines. He spent four years shipping LoRaWAN and IoT hardware — 150+ devices, ~30% BOM cost reductions — before turning that systems instinct toward AI: multi-agent pipelines, automation, and developer tooling, built during his training at Arca&nbsp;PH.</p>
+          <p style="margin-top:14px">This edition is the print companion to his dark, glass-built portfolio — same work, a different press.</p>
+          <p style="margin-top:14px"><a href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--blue);text-decoration:underline;text-underline-offset:3px;font-weight:500">Read the full résumé (PDF) ↗</a></p>
+          <div class="col-h">Toolkit</div>
+          <div class="skill-row">
+            <span class="chip">Claude Code</span><span class="chip">Codex</span><span class="chip">Claude Cowork</span><span class="chip">MCP</span><span class="chip">Python</span><span class="chip">Node</span><span class="chip">HTML/CSS</span><span class="chip">Tailwind</span><span class="chip">Supabase</span><span class="chip">Git</span><span class="chip">Vercel</span><span class="chip">KiCad</span><span class="chip">Altium</span>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="col-h">Track record</div>
+          <ul class="timeline">
+            <li><span class="yr">2025—</span><span><span class="role">AI / Software Trainee</span><br><span class="org">Arca PH</span></span></li>
+            <li><span class="yr">2024—25</span><span><span class="role">Sr. Hardware Engineer</span><br><span class="org">Packetworx</span></span></li>
+            <li><span class="yr">2021—24</span><span><span class="role">Hardware Engineer</span><br><span class="org">Packetworx</span></span></li>
+            <li><span class="yr">2020</span><span><span class="role">Software</span><br><span class="org">Accenture</span></span></li>
+          </ul>
+          <div class="col-h">Education &amp; license</div>
+          <ul class="timeline">
+            <li><span class="yr">2019</span><span><span class="role">BS Electronics Engineering</span><br><span class="org">Bulacan State University</span></span></li>
+            <li><span class="yr">PRC</span><span><span class="role">Licensed Electronics Engineer</span><br><span class="org">ECE · LoRaWAN certified</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLOPHON ===== -->
+  <footer class="colophon" id="colophon">
+    <div class="wrap">
+      <div class="top">
+        <h2>Let’s build the next issue.</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="gh" href="AResume-Editorial-Redacted.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+          <a class="gh" href="https://github.com/lw1414" target="_blank" rel="noopener noreferrer">GitHub ↗ /lw1414</a>
+        </div>
+      </div>
+      <div class="fine">
+        <span>© 2026 Aernest Lean Rivera</span>
+        <span>Set in Instrument Serif, Newsreader &amp; Space Mono</span>
+        <span>Designed &amp; built from scratch — the press companion</span>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Zoomed figure">
+  <button class="lb-close" type="button" aria-label="Close">Close ✕</button>
+  <div class="lb-slot"></div>
+  <div class="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  // mobile nav
+  var burger=document.querySelector('.burger'), nav=document.getElementById('nav');
+  if(burger){
+    burger.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open);
+      burger.textContent=open?'Close ▴':'Index ▾';
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&nav.classList.contains('open')){
+        nav.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.textContent='Index ▾';
+      }
+    });
+  }
+  // lightbox / click-to-zoom
+  var lb=document.getElementById('lightbox'), lbSlot=lb.querySelector('.lb-slot'), lbCap=lb.querySelector('.lb-cap'), lbClose=lb.querySelector('.lb-close'), lastFocus=null;
+  function openLB(srcEl){
+    var fig=srcEl.closest('figure'), cap=fig?fig.querySelector('figcaption'):null;
+    lbSlot.innerHTML='';
+    var node;
+    if(srcEl.tagName==='VIDEO'){
+      node=document.createElement('video');
+      node.src=srcEl.currentSrc||srcEl.src; node.controls=true; node.autoplay=true; node.loop=true; node.muted=true; node.playsInline=true;
+    } else {
+      node=document.createElement('img'); node.src=srcEl.currentSrc||srcEl.src; node.alt=srcEl.alt||'';
+    }
+    node.className='lb-media';
+    lbSlot.appendChild(node);
+    lbCap.innerHTML=cap?cap.innerHTML:'';
+    lb.classList.add('open');
+    lastFocus=document.activeElement; lbClose.focus();
+    document.body.style.overflow='hidden';
+  }
+  function closeLB(){
+    lb.classList.remove('open'); lbSlot.innerHTML=''; document.body.style.overflow='';
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+  document.querySelectorAll('figure.plate img,figure.plate video,.plate-duo img').forEach(function(el){
+    el.addEventListener('click',function(){openLB(el);});
+  });
+  lbClose.addEventListener('click',closeLB);
+  lb.addEventListener('click',function(e){ if(e.target===lb)closeLB(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('open'))closeLB(); });
+
+  // reveal on scroll
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver'in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(el){io.observe(el);});
+    setTimeout(function(){els.forEach(function(el){el.classList.add('in');});},2600);
+  } else { els.forEach(function(el){el.classList.add('in');}); }
+})();
+</script>
+</body>
+</html>
